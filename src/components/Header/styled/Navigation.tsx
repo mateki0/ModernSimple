@@ -1,11 +1,11 @@
-import styled from "styled-components"
+import styled from 'styled-components';
 
 const Navigation = styled.nav`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 50px;
-`
+  height: 100px;
+`;
 
-export default Navigation
+export default Navigation;
