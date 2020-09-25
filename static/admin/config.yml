@@ -1,5 +1,6 @@
 backend:
-  name: ModernSimple
+  name: github
+  repo: mateki0/ModernSimple
 media_folder: static/assets
 public_folder: /assets
 collections:
