@@ -1,7 +1,7 @@
-import React from "react"
+import * as React from 'react';
 
-const About = () => {
-  return <div>Hello</div>
-}
+const About: React.FC = () => {
+  return <div>Hello</div>;
+};
 
-export default About
+export default About;
