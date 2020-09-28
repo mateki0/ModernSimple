@@ -3,13 +3,14 @@ import { Link } from 'gatsby';
 import Navigation from './styled/Navigation';
 import LogoWrapper from './styled/LogoWrapper';
 import LogoIconWrapper from './styled/LogoIconWrapper';
-import LogoGreenText from './styled/LogoGreenText';
-import LogoOrangeText from './styled/LogoOrangeText';
+import LogoText from './styled/LogoText';
 import Menu from './styled/Menu';
 import NavList from './styled/NavList';
 import NavListItem from './styled/NavListItem';
 import LinkButton from './styled/LinkButton';
 import LogoTextWrapper from './styled/LogoTextWrapper';
+
+import Logo from '../../assets/logo.svg';
 
 interface HeaderProps {
   siteTitle: string;
@@ -18,12 +19,8 @@ const Header: React.FC<HeaderProps> = ({ siteTitle }) => {
   return (
     <header>
       <Navigation>
-        <LogoWrapper>
-          <LogoIconWrapper />
-          <LogoTextWrapper>
-            <LogoGreenText>Studio graficzne</LogoGreenText>
-            <LogoOrangeText>Klaudia Ryś</LogoOrangeText>
-          </LogoTextWrapper>
+        <LogoWrapper href="/">
+          <Logo />
         </LogoWrapper>
         <Menu>
           <NavList>
