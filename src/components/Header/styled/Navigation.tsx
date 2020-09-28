@@ -5,7 +5,8 @@ const Navigation = styled.nav`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 100px;
+  height: 43px;
+  margin-bottom: 10px;
 `;
 
 export default Navigation;

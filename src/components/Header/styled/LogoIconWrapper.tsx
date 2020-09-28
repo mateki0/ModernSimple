@@ -1,5 +1,8 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-const LogoIconWrapper = styled.div``
+const LogoIconWrapper = styled.img`
+  width: 24px;
+  height: 24px;
+`;
 
-export default LogoIconWrapper
+export default LogoIconWrapper;
