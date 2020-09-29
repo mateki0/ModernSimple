@@ -25,17 +25,17 @@ const Header: React.FC<HeaderProps> = ({ siteTitle }) => {
         <Menu>
           <NavList>
             <NavListItem>
-              <Link to="o-mnie">
+              <Link to="/o-mnie">
                 <LinkButton>O mnie</LinkButton>
               </Link>
             </NavListItem>
             <NavListItem>
-              <Link to="usługi">
+              <Link to="/uslugi">
                 <LinkButton>Usługi</LinkButton>
               </Link>
             </NavListItem>
             <NavListItem>
-              <Link to="kontakt">
+              <Link to="/kontakt">
                 <LinkButton>Kontakt</LinkButton>
               </Link>
             </NavListItem>

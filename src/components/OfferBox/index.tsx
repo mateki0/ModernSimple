@@ -1,6 +1,5 @@
 import * as React from 'react';
 import OfferWrapper from './styled/OfferWrapper';
-import OfferColumn from './styled/OfferColumn';
 import SingleOffer from './styled/SingleOffer';
 import SingleOfferSpan from './styled/SingleOfferSpan';
 import OfferBgImg from './styled/OfferBgImg';

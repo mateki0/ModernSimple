@@ -9,7 +9,7 @@ import LastProjects from '../components/LastProjects';
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Strona główna" />
     <OfferBox />
     <Cooperation />
     <LastProjects />
