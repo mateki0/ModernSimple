@@ -12,7 +12,7 @@ const LastProjects: React.FC = () => {
         nodes {
           relativePath
           childImageSharp {
-            fluid(maxWidth: 241, quality: 100) {
+            fluid(maxWidth: 906, quality: 100) {
               ...GatsbyImageSharpFluid
             }
           }

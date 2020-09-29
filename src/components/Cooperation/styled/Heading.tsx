@@ -5,6 +5,10 @@ const Heading = styled.h1`
 
   text-align: center;
   color: #2c9692;
-  font-weight: 900;
+  font-weight: bold;
+  @media only screen and (min-width: 1024px) {
+    font-size: 30px;
+    margin: 40px;
+  }
 `;
 export default Heading;

@@ -11,11 +11,16 @@ interface LayoutProps {
 }
 const GlobalStyle = createGlobalStyle`
 body{
-  width:90%;
+  width:95%;
   display:flex;
   flex-direction:column;
-  padding:0 10px;
-  font-family:"nunito";
+  margin:0 auto;
+  @media only screen and (min-width: 1024px) {
+    
+    padding:0;
+    width:95%;
+  }
+  
 }
 `;
 const Layout: React.FC<LayoutProps> = ({ children }) => {

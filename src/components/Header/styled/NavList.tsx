@@ -6,7 +6,7 @@ const NavList = styled.ul`
   padding: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+
   width: 100%;
 `;
 

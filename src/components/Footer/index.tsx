@@ -1,7 +1,7 @@
 import * as React from 'react';
 import ContentSpan from './styled/ContentSpan';
 import ContentTitle from './styled/ContentTitle';
-import FooterSection from './styled/FooterSection';
+
 import FooterSectionTitle from './styled/FooterSectionTitle';
 import FooterWrapper from './styled/FooterWrapper';
 import SectionContent from './styled/SectionContent';
@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <footer>
       <FooterWrapper>
-        <FooterSection>
+        <div>
           <FooterSectionTitle>Napisz lub zadzwoń</FooterSectionTitle>
           <SectionContentWrapper>
             <SectionContent>
@@ -25,27 +25,27 @@ const Footer = () => {
               <ContentSpan>modernsimple00@gmail.com</ContentSpan>
             </SectionContent>
           </SectionContentWrapper>
-        </FooterSection>
-        <FooterSection>
+        </div>
+        <div>
           <FooterSectionTitle>Godziny otwarcia</FooterSectionTitle>
           <SectionContent>
             <ContentTitle>Poniedziałek-piątek</ContentTitle>
             <ContentSpan>09:00-17:00</ContentSpan>
           </SectionContent>
-        </FooterSection>
-        <FooterSection>
+        </div>
+        <div>
           <FooterSectionTitle>Social Media</FooterSectionTitle>
           <SectionContent>
             <ContentTitle>Facebook</ContentTitle>
             <ContentSpan>Modern Simple</ContentSpan>
           </SectionContent>
-        </FooterSection>
-        <FooterSection>
+        </div>
+        <div>
           <FooterSectionTitle>Polityka prywatności</FooterSectionTitle>
           <SectionContent>
             <ContentTitle>Informacje ogólne</ContentTitle>
           </SectionContent>
-        </FooterSection>
+        </div>
       </FooterWrapper>
     </footer>
   );

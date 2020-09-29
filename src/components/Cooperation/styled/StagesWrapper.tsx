@@ -4,5 +4,9 @@ const StageWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px 50px;
+  @media only screen and (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 10px 0;
+  }
 `;
 export default StageWrapper;
