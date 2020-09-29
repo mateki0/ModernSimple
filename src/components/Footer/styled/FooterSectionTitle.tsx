@@ -7,6 +7,9 @@ const FooterSectionTitle = styled.h5`
   width: 85%;
   border-bottom: 1px solid #eca72c;
   margin: 5px 0;
+  @media only screen and (min-width: 1024px) {
+    font-size: 20px;
+  }
 `;
 
 export default FooterSectionTitle;

@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
-const OfferColumn = styled.div<{ position: string }>`
+const OfferColumn = styled.div`
   display: grid;
+
   align-items: center;
-  justify-items: ${(props) => props.position};
+  justify-items: center;
 `;
 
 export default OfferColumn;
