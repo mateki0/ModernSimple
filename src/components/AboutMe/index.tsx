@@ -1,18 +1,19 @@
 import * as React from 'react';
-import AboutMeWrapper from './styled/AboutMeWrapper';
-import AboutTitleWrapper from './styled/AboutTitleWrapper';
-import AboutTitleSpan from './styled/AboutTitleSpan';
-import AboutDescription from './styled/AboutDescription';
-import DescriptionWrapper from './styled/DescriptionWrapper';
+
+import SectionTitleWrapper from './styled/SectionTitleWrapper';
+import SectionTitleSpan from './styled/SectionTitleSpan';
+import SectionContent from './styled/SectionContent';
+import SectionWrapper from './styled/SectionWrapper';
+import ComponentWrapper from './styled/ComponentWrapper';
 
 const AboutMeDescription: React.FC<{ displayMobile?: boolean }> = ({ displayMobile }) => {
   return (
-    <AboutMeWrapper displayMobile={displayMobile}>
-      <AboutTitleWrapper>
-        <AboutTitleSpan>O Mnie</AboutTitleSpan>
-      </AboutTitleWrapper>
-      <DescriptionWrapper>
-        <AboutDescription>
+    <ComponentWrapper displayMobile={displayMobile}>
+      <SectionTitleWrapper>
+        <SectionTitleSpan>O Mnie</SectionTitleSpan>
+      </SectionTitleWrapper>
+      <SectionWrapper>
+        <SectionContent>
           Nazywam się Klaudia Ryś i jestem grafikiem komputerowym. Mam tytuł magistra sztuki.
           Skończyłam studia jednolite magisterskie na kierunku grafika w Wyższej Szkole Technicznej
           w Katowicach. Grafika jest moją pasją. Bardzo lubię projektować loga oraz identyfikacje
@@ -20,9 +21,9 @@ const AboutMeDescription: React.FC<{ displayMobile?: boolean }> = ({ displayMobi
           Chęcią podejmuje nowe wyzwania. Jestem osoba kreatywną lubię oryginalność. Chętnie podejmę
           nowe zlecenia. Więc jeżeli potrzebujesz logo, materiałów reklamowych, grafiki, zaproszeń,
           strony internetowej, to zapraszam do współpracy. Zróbmy to razem!
-        </AboutDescription>
-      </DescriptionWrapper>
-    </AboutMeWrapper>
+        </SectionContent>
+      </SectionWrapper>
+    </ComponentWrapper>
   );
 };
 export default AboutMeDescription;

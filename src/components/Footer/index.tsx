@@ -4,7 +4,7 @@ import ContentTitle from './styled/ContentTitle';
 
 import FooterSectionTitle from './styled/FooterSectionTitle';
 import FooterWrapper from './styled/FooterWrapper';
-import SectionContent from './styled/SectionContent';
+import FooterSectionContent from './styled/FooterSectionContent';
 import SectionContentWrapper from './styled/SectionContentWrapper';
 
 const Footer = () => {
@@ -14,37 +14,37 @@ const Footer = () => {
         <div>
           <FooterSectionTitle>Napisz lub zadzwoń</FooterSectionTitle>
           <SectionContentWrapper>
-            <SectionContent>
+            <FooterSectionContent>
               <ContentTitle>Telefon</ContentTitle>
               <ContentSpan>Klaudia Ryś</ContentSpan>
               <ContentSpan>605 999 089</ContentSpan>
-            </SectionContent>
-            <SectionContent>
+            </FooterSectionContent>
+            <FooterSectionContent>
               <ContentTitle>Mail</ContentTitle>
               <ContentSpan>klaudiarys1996@gmail.com </ContentSpan>
               <ContentSpan>modernsimple00@gmail.com</ContentSpan>
-            </SectionContent>
+            </FooterSectionContent>
           </SectionContentWrapper>
         </div>
         <div>
           <FooterSectionTitle>Godziny otwarcia</FooterSectionTitle>
-          <SectionContent>
+          <FooterSectionContent>
             <ContentTitle>Poniedziałek-piątek</ContentTitle>
             <ContentSpan>09:00-17:00</ContentSpan>
-          </SectionContent>
+          </FooterSectionContent>
         </div>
         <div>
           <FooterSectionTitle>Social Media</FooterSectionTitle>
-          <SectionContent>
+          <FooterSectionContent>
             <ContentTitle>Facebook</ContentTitle>
             <ContentSpan>Modern Simple</ContentSpan>
-          </SectionContent>
+          </FooterSectionContent>
         </div>
         <div>
           <FooterSectionTitle>Polityka prywatności</FooterSectionTitle>
-          <SectionContent>
+          <FooterSectionContent>
             <ContentTitle>Informacje ogólne</ContentTitle>
-          </SectionContent>
+          </FooterSectionContent>
         </div>
       </FooterWrapper>
     </footer>
