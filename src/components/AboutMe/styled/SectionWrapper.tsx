@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 const SectionWrapper = styled.div`
   padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+
   @media only screen and (min-width: 1024px) {
     padding: 40px 0;
   }

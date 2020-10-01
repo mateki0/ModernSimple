@@ -8,6 +8,7 @@ const FooterSectionContent = styled.div`
     margin-left: 10px;
   }
   @media only screen and (min-width: 1024px) {
+    margin-top: 15px;
     :nth-of-type(2) {
       margin-left: 50px;
     }

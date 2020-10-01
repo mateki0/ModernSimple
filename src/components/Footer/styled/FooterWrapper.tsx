@@ -7,6 +7,7 @@ const FooterWrapper = styled.div`
   margin-top: 20px;
   @media only screen and (min-width: 1024px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-top: 40px;
   }
 `;
 export default FooterWrapper;

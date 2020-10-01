@@ -37,13 +37,17 @@ const Footer = () => {
           <FooterSectionTitle>Social Media</FooterSectionTitle>
           <FooterSectionContent>
             <ContentTitle>Facebook</ContentTitle>
-            <ContentSpan>Modern Simple</ContentSpan>
+            <ContentSpan as="a" href="https://www.facebook.com/Modern-Simple-101772301672898">
+              Modern Simple
+            </ContentSpan>
           </FooterSectionContent>
         </div>
         <div>
           <FooterSectionTitle>Polityka prywatności</FooterSectionTitle>
           <FooterSectionContent>
-            <ContentTitle>Informacje ogólne</ContentTitle>
+            <ContentTitle as="a" href="/polityka-prywatnosci">
+              Informacje ogólne
+            </ContentTitle>
           </FooterSectionContent>
         </div>
       </FooterWrapper>

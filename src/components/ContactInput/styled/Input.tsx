@@ -1,7 +1,18 @@
 import styled from 'styled-components';
 
-const Input = styled.input<{ height: string; width: string }>`
-  height: ${(props) => props.height};
-  width: ${(props) => props.width};
+const Input = styled.input<{ height?: string; width?: string; textarea?: boolean }>`
+  height: ${(props) => (props.textarea ? '92px' : '25px')};
+  width: ${(props) => (props.width ? props.width : '345px')};
+  border: 2px solid #2c9692;
+  border-radius: 7px;
+  padding: 5px 0 5px 5px;
+  font-size: 16px;
+  @media only screen and (min-width: 1024px) {
+    width: 802px;
+    height: 58px;
+    height: ${(props) => (props.textarea ? '213px' : '58px')};
+    border-radius: 23px;
+    font-size: 23px;
+  }
 `;
 export default Input;

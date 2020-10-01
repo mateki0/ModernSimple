@@ -1,5 +1,5 @@
 import * as React from 'react';
-import ContactPage from '../components/Contact';
+import ContactPage from '../components/ContactPage';
 import ContactForm from '../components/ContactForm';
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
