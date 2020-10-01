@@ -7,6 +7,8 @@ import ColumnText from '../Cooperation/styled/ColumnText';
 import ColumnTitle from '../Cooperation/styled/ColumnTitle';
 import AdvertiseMaterialsUl from './styled/AdvertiseMaterialsUl';
 import AdvertiseMaterialItem from './styled/AdvertiseMaterialItem';
+import LogoType from './styled/LogoType';
+import LogoTypeContainer from './styled/LogoTypeContainer';
 
 const OurServices: React.FC = () => {
   return (
@@ -52,31 +54,29 @@ const OurServices: React.FC = () => {
             grafiki do dziecięcych pokoików.
           </ColumnText>
         </div>
-        <div>
-          <ColumnTitle>Logo Standard</ColumnTitle>
+        <LogoTypeContainer>
+          <ColumnTitle>Logo</ColumnTitle>
+          <LogoType>Logo Standard (1 propozycja)</LogoType>
           <ColumnText>
             Standardowa usługa projektowa logo. Przeprowadzam z Tobą dokładny wywiad (brief) oraz
             gromadzę wszystkie wytyczne i wskazówki. Następnie przedstawiam Ci swoją propozycję
             (wstępny zarys, rysunek odręczny), który zatwierdzasz lub nie. Kolejno przygotowuję
             właściwą wersję w programie graficznym.
           </ColumnText>
-        </div>
-        <div>
-          <ColumnTitle>Logo Standard+</ColumnTitle>
+
+          <LogoType>Logo Standard+ (2 propozycje)</LogoType>
           <ColumnText>
             Logo standard+, rozszerzona usługa projektowa. Zamiast jednej propozycji znaku dostajesz
             2. Zdecyduj się na ten pakiet, jeżeli jedna propozycja to dla Ciebie za mało!
           </ColumnText>
-        </div>
-        <div>
-          <ColumnTitle>Logo Premium</ColumnTitle>
+          <LogoType>Logo Premium (3 propozycje)</LogoType>
           <ColumnText>
             Usługa projektowa logo dla najbardziej wymagających! Przeprowadzam z Tobą dokładny
             wywiad (brief) oraz gromadzę wszystkie wytyczne i wskazówki. Następnie przedstawiam Ci
             trzy, przygotowane w programie graficznym, propozycje logo. Wybierz ten pakiet, jeżeli
             chcesz mieć duży wybór!
           </ColumnText>
-        </div>
+        </LogoTypeContainer>
         <div>
           <ColumnTitle>Zaproszenia</ColumnTitle>
           <ColumnText>

@@ -8,23 +8,23 @@ const OfferBox: React.FC = () => {
   return (
     <OfferWrapper>
       <OfferBgImg>
-        <SingleOffer bgColor="#EB9419" position="end">
+        <SingleOffer href="/uslugi" position="end" row="1/1" bgHover="#27867f">
           <SingleOfferSpan> Identyfikacja wizualna</SingleOfferSpan>
         </SingleOffer>
-        <SingleOffer bgColor="#27867F" position="center">
+        <SingleOffer href="/uslugi" position="center" row="2/2" bgHover="#eca72c">
           <SingleOfferSpan>Materiały reklamowe</SingleOfferSpan>
         </SingleOffer>
-        <SingleOffer bgColor="#EB9419" position="start">
+        <SingleOffer href="/uslugi" position="start" row="3/3" bgHover="#27867f">
           <SingleOfferSpan>Zaproszenia</SingleOfferSpan>
         </SingleOffer>
 
-        <SingleOffer bgColor="#27867F" position="end">
+        <SingleOffer href="/uslugi" position="end" bgHover="#eca72c">
           <SingleOfferSpan>Logo</SingleOfferSpan>
         </SingleOffer>
-        <SingleOffer bgColor="#EB9419" position="center">
+        <SingleOffer href="/uslugi" position="center" bgHover="#27867f">
           <SingleOfferSpan>Strony internetowe</SingleOfferSpan>
         </SingleOffer>
-        <SingleOffer bgColor="#27867F" position="start">
+        <SingleOffer href="/uslugi" position="start" bgHover="#eca72c">
           <SingleOfferSpan>Metryczki</SingleOfferSpan>
         </SingleOffer>
       </OfferBgImg>

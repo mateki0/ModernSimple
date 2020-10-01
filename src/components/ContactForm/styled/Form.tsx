@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Form = styled.form`
-  padding: 20px 0;
+  padding: 0;
   margin: 0;
 `;
 

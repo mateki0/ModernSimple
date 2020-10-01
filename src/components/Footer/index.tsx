@@ -45,7 +45,7 @@ const Footer = () => {
         <div>
           <FooterSectionTitle>Polityka prywatności</FooterSectionTitle>
           <FooterSectionContent>
-            <ContentTitle as="a" href="/polityka-prywatnosci">
+            <ContentTitle as="a" href="/polityka-prywatnosci" target="_blank">
               Informacje ogólne
             </ContentTitle>
           </FooterSectionContent>

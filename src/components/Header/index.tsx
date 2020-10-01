@@ -11,13 +11,14 @@ import LinkButton from './styled/LinkButton';
 import LogoTextWrapper from './styled/LogoTextWrapper';
 
 import Logo from '../../assets/logo.svg';
+import StyledHeader from './styled/StyledHeader';
 
 interface HeaderProps {
   siteTitle: string;
 }
 const Header: React.FC<HeaderProps> = ({ siteTitle }) => {
   return (
-    <header>
+    <StyledHeader>
       <Navigation>
         <LogoWrapper href="/">
           <Logo />
@@ -42,7 +43,7 @@ const Header: React.FC<HeaderProps> = ({ siteTitle }) => {
           </NavList>
         </Menu>
       </Navigation>
-    </header>
+    </StyledHeader>
   );
 };
 

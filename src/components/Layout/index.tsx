@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import Header from '../Header';
 import Footer from '../Footer';
+import StyledMain from './StyledMain';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -16,7 +17,7 @@ body{
   flex-direction:column;
   margin:0 auto;
   @media only screen and (min-width: 1024px) {
-    
+    overflow-y:hidden;
     padding:0;
     width:95%;
   }
@@ -38,7 +39,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <>
       <GlobalStyle />
       <Header siteTitle={data.site.siteMetadata?.title} />
-      <main>{children}</main>
+      <StyledMain>{children}</StyledMain>
       <Footer />
     </>
   );

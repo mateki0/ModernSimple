@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const SectionWrapper = styled.div`
-  padding: 20px 0;
+  padding: 23px 0 0 0;
   display: flex;
   flex-direction: column;
 
