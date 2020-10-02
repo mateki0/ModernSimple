@@ -12,14 +12,15 @@ interface LayoutProps {
 }
 const GlobalStyle = createGlobalStyle`
 body{
-  width:95%;
+  width:100%;
   display:flex;
   flex-direction:column;
   margin:0 auto;
+  padding:0 9px;
   @media only screen and (min-width: 1024px) {
     overflow-y:hidden;
-    padding:0;
-    width:95%;
+    padding:0 30px;
+    
   }
   
 }
