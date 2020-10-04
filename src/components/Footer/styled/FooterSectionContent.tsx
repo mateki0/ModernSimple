@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const FooterSectionContent = styled.div`
   display: flex;
   flex-direction: column;
-
+  width: 100%;
   :nth-of-type(2) {
     margin-left: 10px;
   }

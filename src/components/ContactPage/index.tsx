@@ -7,7 +7,10 @@ import ContactText from './styled/ContactText';
 import ContactSubheading from './styled/ContactSubheading';
 import ContactWrapper from './styled/ContactWrapper';
 
-const ContactPage: React.FC = () => {
+interface ContactProps {
+  displayMobile: boolean;
+}
+const ContactPage: React.FC<ContactProps> = () => {
   return (
     <ContactWrapper>
       <div>
@@ -16,7 +19,7 @@ const ContactPage: React.FC = () => {
         </SectionTitleWrapper>
 
         <SectionWrapper>
-          <ContactSubheading>Masz pytania? Skontaktuj nie ze mną.</ContactSubheading>
+          <ContactSubheading>Masz pytania? Skontaktuj sie ze mną.</ContactSubheading>
           <ContactText>
             Napisz do mnie wiadomość lub zadzwoń. Chętnie odpowiem na wszystkie pytania lub przyjmę
             zamówienie na projekt graficzny.

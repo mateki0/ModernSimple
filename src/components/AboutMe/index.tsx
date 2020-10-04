@@ -18,7 +18,7 @@ const AboutMeDescription: React.FC<{ displayMobile?: boolean }> = ({ displayMobi
           Skończyłam studia jednolite magisterskie na kierunku grafika w Wyższej Szkole Technicznej
           w Katowicach. Grafika jest moją pasją. Bardzo lubię projektować loga oraz identyfikacje
           wizualne. Charakteryzuje mnie prostota i nowoczesność z tego właśnie wzięła się nazwa. Z
-          Chęcią podejmuje nowe wyzwania. Jestem osoba kreatywną lubię oryginalność. Chętnie podejmę
+          chęcią podejmuje nowe wyzwania. Jestem osoba kreatywną lubię oryginalność. Chętnie podejmę
           nowe zlecenia. Więc jeżeli potrzebujesz logo, materiałów reklamowych, grafiki, zaproszeń,
           strony internetowej, to zapraszam do współpracy. Zróbmy to razem!
         </SectionContent>

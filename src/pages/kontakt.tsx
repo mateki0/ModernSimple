@@ -6,7 +6,7 @@ import SEO from '../components/seo';
 const Contact: React.FC = () => {
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Kontakt" />
       <ContactPage displayMobile={true} />
       <ContactForm displayMobile={true} />
     </Layout>

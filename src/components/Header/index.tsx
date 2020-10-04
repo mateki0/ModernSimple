@@ -8,7 +8,6 @@ import Menu from './styled/Menu';
 import NavList from './styled/NavList';
 import NavListItem from './styled/NavListItem';
 import LinkButton from './styled/LinkButton';
-import LogoTextWrapper from './styled/LogoTextWrapper';
 
 import Logo from '../../assets/logo.svg';
 import StyledHeader from './styled/StyledHeader';
@@ -16,7 +15,7 @@ import StyledHeader from './styled/StyledHeader';
 interface HeaderProps {
   siteTitle: string;
 }
-const Header: React.FC<HeaderProps> = ({ siteTitle }) => {
+const Header: React.FC<HeaderProps> = () => {
   return (
     <StyledHeader>
       <Navigation>
@@ -28,6 +27,11 @@ const Header: React.FC<HeaderProps> = ({ siteTitle }) => {
             <NavListItem>
               <Link to="/o-mnie">
                 <LinkButton>O mnie</LinkButton>
+              </Link>
+            </NavListItem>
+            <NavListItem>
+              <Link to="/portfolio">
+                <LinkButton>Portfolio</LinkButton>
               </Link>
             </NavListItem>
             <NavListItem>

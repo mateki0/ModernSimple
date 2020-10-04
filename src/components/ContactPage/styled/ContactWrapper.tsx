@@ -9,7 +9,7 @@ const ContactWrapper = styled.div<{ displayMobile?: boolean }>`
     padding: 50px 0 0 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 0 485px;
+    grid-gap: 0 5vw;
   }
 `;
 
