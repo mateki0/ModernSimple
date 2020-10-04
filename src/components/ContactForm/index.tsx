@@ -16,13 +16,13 @@ const ContactForm: React.FC<{ displayMobile: boolean }> = ({ displayMobile }) =>
       </SectionTitleWrapper>
 
       <SectionWrapper>
-        <Form>
+        <Form method="POST" name="contact" data-netlify="true">
           <ContactInput label="Imię i nazwisko" name="name" />
           <ContactInput label="Adres e-mail" name="email" />
           <ContactInput label="Telefon kontaktowy" name="phone" />
           <ContactInput label="Treść wiadomości" name="message" textarea={true} />
           <ButtonDiv>
-            <ContactButton />
+            <ContactButton type="submit" />
           </ButtonDiv>
         </Form>
       </SectionWrapper>

@@ -4,34 +4,18 @@ import Heading from '../Cooperation/styled/Heading';
 
 import ServicesWrapper from './styled/ServicesWrapper';
 import ColumnText from '../Cooperation/styled/ColumnText';
-import ColumnTitle from '../Cooperation/styled/ColumnTitle';
 import AdvertiseMaterialsUl from './styled/AdvertiseMaterialsUl';
 import AdvertiseMaterialItem from './styled/AdvertiseMaterialItem';
 import LogoType from './styled/LogoType';
-import LogoTypeContainer from './styled/LogoTypeContainer';
+import ColumnItem from '../Cooperation/styled/ColumnItem';
+import ColumnTitle from '../Cooperation/styled/ColumnTitle';
 
 const OurServices: React.FC = () => {
   return (
     <ServicesWrapper>
       <Heading>Nasze Usługi</Heading>
       <ColumnsWrapper>
-        <LogoTypeContainer>
-          <ColumnTitle>Identyfikacja Wizualna</ColumnTitle>
-          <ColumnText>
-            Podstawowe narzędzie do kreowania wizerunku marki. Jeżeli interesuje cię wyróżnienie się
-            na rynku i stworzenie spójnej identyfikacji, to ta opcja jest właśnie dla Ciebie.
-            Zadbamy o twój znak o materiały reklamowe i wizerunek marki. Wycena tworzona jest
-            indywidualnie i zależy od Twoich potrzeb.
-          </ColumnText>
-        </LogoTypeContainer>
-        <LogoTypeContainer>
-          <ColumnTitle>Strony internetowe</ColumnTitle>
-          <ColumnText>
-            Potrzebujesz strony internetowej? To ta opcja jest właśnie dla Ciebie. Zaprojektujemy
-            Twoją stronę internetową. Po akceptacji prototypu przystąpimy do jej realizacji.
-          </ColumnText>
-        </LogoTypeContainer>
-        <LogoTypeContainer row="1/1" column="2">
+        <ColumnItem>
           <ColumnTitle>Logo</ColumnTitle>
           <LogoType>
             Logo Standard <br />
@@ -43,8 +27,7 @@ const OurServices: React.FC = () => {
             (wstępny zarys, rysunek odręczny), który zatwierdzasz lub nie. Kolejno przygotowuję
             właściwą wersję w programie graficznym.
           </ColumnText>
-        </LogoTypeContainer>
-        <LogoTypeContainer row="2/2" column="2">
+
           <LogoType>
             Logo Standard+ <br />
             (2 propozycje)
@@ -53,8 +36,7 @@ const OurServices: React.FC = () => {
             Logo standard+, rozszerzona usługa projektowa. Zamiast jednej propozycji znaku dostajesz
             2. Zdecyduj się na ten pakiet, jeżeli jedna propozycja to dla Ciebie za mało!
           </ColumnText>
-        </LogoTypeContainer>
-        <LogoTypeContainer row="3/3" column="2">
+
           <LogoType>
             Logo Premium <br />
             (3 propozycje)
@@ -65,8 +47,9 @@ const OurServices: React.FC = () => {
             trzy, przygotowane w programie graficznym, propozycje logo. Wybierz ten pakiet, jeżeli
             chcesz mieć duży wybór!
           </ColumnText>
-        </LogoTypeContainer>
-        <LogoTypeContainer>
+        </ColumnItem>
+
+        <ColumnItem>
           <ColumnTitle>Materiały reklamowe</ColumnTitle>
           <AdvertiseMaterialsUl>
             <AdvertiseMaterialItem>Wizytówka jednostronna</AdvertiseMaterialItem>
@@ -80,17 +63,30 @@ const OurServices: React.FC = () => {
             <AdvertiseMaterialItem>Teczki</AdvertiseMaterialItem>
             <AdvertiseMaterialItem>Koperty</AdvertiseMaterialItem>
           </AdvertiseMaterialsUl>
-        </LogoTypeContainer>
-        <LogoTypeContainer>
+        </ColumnItem>
+        <ColumnItem>
+          <ColumnTitle>Identyfikacja Wizualna</ColumnTitle>
+          <ColumnText>
+            Podstawowe narzędzie do kreowania wizerunku marki. Jeżeli interesuje cię wyróżnienie się
+            na rynku i stworzenie spójnej identyfikacji, to ta opcja jest właśnie dla Ciebie.
+            Zadbamy o twój znak o materiały reklamowe i wizerunek marki. Wycena tworzona jest
+            indywidualnie i zależy od Twoich potrzeb.
+          </ColumnText>
+
+          <ColumnTitle>Strony internetowe</ColumnTitle>
+          <ColumnText>
+            Potrzebujesz strony internetowej? To ta opcja jest właśnie dla Ciebie. Zaprojektujemy
+            Twoją stronę internetową. Po akceptacji prototypu przystąpimy do jej realizacji.
+          </ColumnText>
+        </ColumnItem>
+        <ColumnItem>
           <ColumnTitle>Zaproszenia</ColumnTitle>
           <ColumnText>
             Jeżeli potrzebujesz zaproszeń na ważne wydarzenie, ślub, urodziny, chrzciny, itp. To ta
             opcja jest właśnie dla Ciebie. Wycena jest robiona indywidualnie. Zależy od tego czego
             potrzebujesz i w jakich ilościach.
           </ColumnText>
-        </LogoTypeContainer>
 
-        <LogoTypeContainer>
           <ColumnTitle>Metryczki</ColumnTitle>
           <ColumnText>
             <LogoType>Metryczki</LogoType>
@@ -99,7 +95,7 @@ const OurServices: React.FC = () => {
             <LogoType>Grafiki dla Dzieci</LogoType> Mamy w swojej ofercie również nowoczesne grafiki
             do dziecięcych pokoików.
           </ColumnText>
-        </LogoTypeContainer>
+        </ColumnItem>
       </ColumnsWrapper>
     </ServicesWrapper>
   );

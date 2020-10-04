@@ -9,14 +9,14 @@ const LinkButton = styled.button`
   transition: all 0.5s;
   text-decoration: none;
   padding: 0;
-
+  font-family: 'Nunito', sans-serif;
   &:hover {
     cursor: pointer;
     color: #27867f;
   }
 
   @media only screen and (min-width: 1024px) {
-    font-size: 24px;
+    font-size: 26px;
   }
 `;
 

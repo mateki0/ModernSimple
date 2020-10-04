@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const NavListItem = styled.li`
   margin: 0;
   padding: 1px 6px;
+
   &:last-of-type {
     padding-right: 0;
   }

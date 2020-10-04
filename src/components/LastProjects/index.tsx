@@ -3,10 +3,10 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Heading from '../Cooperation/styled/Heading';
 import LastProjectsWrapper from './styled/LastProjectsWrapper';
-
 import SliderWrapper from './styled/SliderWrapper';
 import ButtonsWrapper from './styled/ButtonsWrapper';
 import SliderButton from './styled/SliderButton';
+import Arrow from '../../assets/forward.svg';
 
 const LastProjects: React.FC = () => {
   const [index, setIndex] = React.useState(0);
@@ -48,8 +48,12 @@ const LastProjects: React.FC = () => {
         <Img fluid={node.childImageSharp.fluid} key={node.id} alt="project img" />
       </SliderWrapper>
       <ButtonsWrapper>
-        <SliderButton onClick={() => handlePrevious()}>Prev</SliderButton>
-        <SliderButton onClick={() => handleNext()}>Next</SliderButton>
+        <SliderButton onClick={() => handlePrevious()} rotate={true}>
+          <Arrow />
+        </SliderButton>
+        <SliderButton onClick={() => handleNext()}>
+          <Arrow />
+        </SliderButton>
       </ButtonsWrapper>
     </LastProjectsWrapper>
   );

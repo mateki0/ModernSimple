@@ -12,7 +12,7 @@ interface LayoutProps {
 }
 const GlobalStyle = createGlobalStyle`
 body{
-  
+  box-sizing:border-box;
   display:flex;
   flex-direction:column;
   margin:0 auto;

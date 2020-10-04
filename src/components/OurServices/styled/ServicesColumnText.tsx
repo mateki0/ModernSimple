@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-const LogoType = styled.p`
-  font-weight: bold;
+const ServicesColumnText = styled.span`
   font-size: 12px;
   color: #2c9692;
-  margin: 15px 0;
+  width: 100%;
+
   @media only screen and (min-width: 1024px) {
-    font-size: 20px;
+    font-size: 16px;
   }
 `;
-export default LogoType;
+export default ServicesColumnText;

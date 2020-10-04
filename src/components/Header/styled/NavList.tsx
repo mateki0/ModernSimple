@@ -8,6 +8,7 @@ const NavList = styled.ul`
   align-items: center;
   padding:0 18px;
   width: 100%;
+  
   @media only screen and (min-width: 1024px) {
     padding: 0 44px;
 `;

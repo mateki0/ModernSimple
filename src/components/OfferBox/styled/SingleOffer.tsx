@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
-const SingleOffer = styled.a<{ position: string; row?: string; bgHover: string }>`
+const SingleOffer = styled.a<{
+  position: string;
+  row?: string;
+  bgHover: string;
+  bgColor: string;
+}>`
   width: 153px;
   height: 25px;
   display: grid;
@@ -9,9 +14,9 @@ const SingleOffer = styled.a<{ position: string; row?: string; bgHover: string }
   border-radius: 25px;
   text-decoration: none;
   transition: all 0.5s;
+  background-color: ${(props) => props.bgColor};
   &:hover {
     background-color: ${(props) => props.bgHover};
-    cursor: pointer;
   }
   @media only screen and (min-width: 1024px) {
     width: 338px;
