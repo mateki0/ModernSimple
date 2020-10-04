@@ -41,6 +41,7 @@ const LastProjects: React.FC = () => {
 
     return () => clearTimeout(slideChange);
   }, [index]);
+
   return (
     <LastProjectsWrapper>
       <Heading>Ostatnie Projekty</Heading>
