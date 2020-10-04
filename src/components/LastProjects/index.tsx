@@ -17,7 +17,7 @@ const LastProjects: React.FC = () => {
           node {
             id
             childImageSharp {
-              fluid(maxWidth: 906) {
+              fluid(maxWidth: 906, maxHeight: 680) {
                 ...GatsbyImageSharpFluid
               }
             }

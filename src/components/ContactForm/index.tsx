@@ -22,8 +22,9 @@ const ContactForm: React.FC<{ displayMobile: boolean }> = ({ displayMobile }) =>
           <ContactInput label="Telefon kontaktowy" name="phone" />
           <ContactInput label="Treść wiadomości" name="message" textarea={true} />
           <ButtonDiv>
-            <ContactButton type="submit" />
+            <ContactButton />
           </ButtonDiv>
+          <input type="hidden" name="form-name" value="contact" />
         </Form>
       </SectionWrapper>
     </ComponentWrapper>
