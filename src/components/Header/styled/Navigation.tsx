@@ -11,12 +11,12 @@ const Navigation = styled.nav`
   align-items: center;
   width: 100%;
   height: 56px;
-  padding: 0 9px;
+  padding: 0 18px;
   background-color: #fff;
   border-bottom: 2px solid #eca72c;
   @media only screen and (min-width: 1024px) {
     height: 134px;
-    padding: 0 30px;
+    padding: 0 44px;
     margin-bottom: 100px;
   }
 `;

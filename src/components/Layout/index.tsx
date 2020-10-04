@@ -12,14 +12,15 @@ interface LayoutProps {
 }
 const GlobalStyle = createGlobalStyle`
 body{
-  width:100%;
+  
   display:flex;
   flex-direction:column;
   margin:0 auto;
-  padding:0 9px;
+  padding:0 18px;
+  font-family: 'Nunito', sans-serif;
   @media only screen and (min-width: 1024px) {
-    overflow-y:hidden;
-    padding:0 30px;
+    
+    padding:0 44px;
     
   }
   

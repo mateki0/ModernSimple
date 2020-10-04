@@ -23,7 +23,8 @@ const ContactPage: React.FC = () => {
           </SectionContent>
           <SectionContent>
             Skontaktuj się ze mną za pośrednictwem formularza kontaktowego lub napisz bezpośrednio
-            na maila <strong>modernsimple00@gmail.com</strong> albo zadzwoń.
+            na maila <strong>modernsimple00@gmail.com</strong> albo zadzwoń
+            <br />
             <strong>605 999 089</strong>
           </SectionContent>
           <SectionContent>

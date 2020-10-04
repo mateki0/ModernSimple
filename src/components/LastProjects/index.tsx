@@ -1,55 +1,56 @@
 import * as React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import Heading from '../Cooperation/styled/Heading';
 import LastProjectsWrapper from './styled/LastProjectsWrapper';
-import BackgroundSlider from 'gatsby-image-background-slider';
-import { useStaticQuery, graphql } from 'gatsby';
+
 import SliderWrapper from './styled/SliderWrapper';
+import ButtonsWrapper from './styled/ButtonsWrapper';
+import SliderButton from './styled/SliderButton';
 
 const LastProjects: React.FC = () => {
-  const ImgQuery = useStaticQuery(graphql`
+  const [index, setIndex] = React.useState(0);
+  const { allFile } = useStaticQuery(graphql`
     query {
-      backgrounds: allFile(filter: { sourceInstanceName: { eq: "backgrounds" } }) {
-        nodes {
-          relativePath
-          childImageSharp {
-            fluid(maxWidth: 906, quality: 100) {
-              ...GatsbyImageSharpFluid
+      allFile(filter: { relativeDirectory: { eq: "backgrounds" } }) {
+        edges {
+          node {
+            id
+            childImageSharp {
+              fluid(maxWidth: 906) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
         }
       }
     }
   `);
+  const length = allFile.edges.length - 1;
+  const handleNext = () => {
+    index === length ? setIndex(0) : setIndex(index + 1);
+  };
+  const handlePrevious = () => {
+    index === 0 ? setIndex(length) : setIndex(index - 1);
+  };
+  const { node } = allFile.edges[index];
+  React.useEffect(() => {
+    const slideChange = setTimeout(() => {
+      index === length ? setIndex(0) : setIndex(index + 1);
+    }, 5000);
+
+    return () => clearTimeout(slideChange);
+  }, [index]);
   return (
     <LastProjectsWrapper>
       <Heading>Ostatnie Projekty</Heading>
       <SliderWrapper>
-        <BackgroundSlider
-          query={ImgQuery}
-          images={[
-            '1.png',
-            '2.png',
-            '3.png',
-            // '4.png',
-            // '5.png',
-            // '6.png',
-            // '7.png',
-            // '8.png',
-            // '9.png',
-            // '10.png',
-            // '11.png',
-            // '12.png',
-            // '13.png',
-            // '14.png',
-            // '15.png',
-            // '16.png',
-            // '17.png',
-            // '18.png',
-            // '19.png',
-            // '20.png',
-          ]}
-        />
+        <Img fluid={node.childImageSharp.fluid} key={node.id} alt="project img" />
       </SliderWrapper>
+      <ButtonsWrapper>
+        <SliderButton onClick={() => handlePrevious()}>Prev</SliderButton>
+        <SliderButton onClick={() => handleNext()}>Next</SliderButton>
+      </ButtonsWrapper>
     </LastProjectsWrapper>
   );
 };

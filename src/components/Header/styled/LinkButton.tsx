@@ -7,6 +7,9 @@ const LinkButton = styled.button`
   font-weight: bold;
   font-size: 10px;
   transition: all 0.5s;
+  text-decoration: none;
+  padding: 0;
+
   &:hover {
     cursor: pointer;
     color: #27867f;

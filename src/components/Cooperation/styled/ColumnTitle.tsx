@@ -7,6 +7,7 @@ const ColumnTitle = styled.h5`
   margin: 15px 0;
   @media only screen and (min-width: 1024px) {
     font-size: 24px;
+    margin: 0 0 34px 0;
   }
 `;
 

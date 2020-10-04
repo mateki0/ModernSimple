@@ -6,7 +6,7 @@ const SectionWrapper = styled.div`
   flex-direction: column;
 
   @media only screen and (min-width: 1024px) {
-    padding: 40px 0;
+    padding: 50px 0;
   }
 `;
 export default SectionWrapper;

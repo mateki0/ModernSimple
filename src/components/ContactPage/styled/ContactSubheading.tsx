@@ -5,8 +5,9 @@ const ContactSubheading = styled.h4`
   color: #eca72c;
   font-weight: bold;
 
-  margin: 0;
+  margin: 0 0 15px 0;
   @media only screen and (min-width: 1024px) {
+    margin: 0 0 34px 0;
     font-size: 31px;
   }
 `;
