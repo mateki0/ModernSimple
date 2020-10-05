@@ -16,7 +16,7 @@ const ContactForm: React.FC<{ displayMobile: boolean }> = ({ displayMobile }) =>
       </SectionTitleWrapper>
 
       <SectionWrapper>
-        <Form method="POST" name="contact" data-netlify="true">
+        <Form method="POST" name="contact" data-netlify="true" action="/dziekujemy">
           <ContactInput label="Imię i nazwisko" name="name" />
           <ContactInput label="Adres e-mail" name="email" />
           <ContactInput label="Telefon kontaktowy" name="phone" />

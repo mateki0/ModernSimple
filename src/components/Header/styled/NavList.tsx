@@ -6,11 +6,12 @@ const NavList = styled.ul`
   padding: 0;
   display: flex;
   align-items: center;
-  padding:0 18px;
+  flex-direction:column;
   width: 100%;
   
   @media only screen and (min-width: 1024px) {
-    padding: 0 44px;
+    padding: 0 22px;
+    flex-direction:row;
 `;
 
 export default NavList;

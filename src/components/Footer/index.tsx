@@ -29,7 +29,7 @@ const Footer = () => {
         <div>
           <FooterSectionTitle>Godziny otwarcia</FooterSectionTitle>
           <FooterSectionContent>
-            <ContentTitle>Poniedziałek-piątek</ContentTitle>
+            <ContentTitle>Poniedziałek-sobota</ContentTitle>
             <ContentSpan>09:00-17:00</ContentSpan>
           </FooterSectionContent>
         </div>

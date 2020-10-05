@@ -4,6 +4,6 @@ const ButtonDiv = styled.div`
   box-sizing: border-box;
   display: flex;
   justify-content: flex-end;
-  width: 100%;
+  width: 99%;
 `;
 export default ButtonDiv;
