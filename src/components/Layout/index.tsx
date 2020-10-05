@@ -16,11 +16,11 @@ body{
   display:flex;
   flex-direction:column;
   margin:0 auto;
-  padding:0 18px;
+  padding:0 9px;
   font-family: 'Nunito', sans-serif;
   @media only screen and (min-width: 1024px) {
     
-    padding:0 44px;
+    padding:0 22px;
     
   }
   
