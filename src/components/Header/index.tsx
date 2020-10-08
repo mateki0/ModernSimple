@@ -10,7 +10,6 @@ import NavListItem from './styled/NavListItem';
 import LinkButton from './styled/LinkButton';
 
 import Logo from '../../assets/logo.svg';
-import StyledHeader from './styled/StyledHeader';
 import HamburgerMenu from './styled/HamburgerMenu';
 import HamburgerWrapper from './styled/HamburgerWrapper';
 
@@ -20,7 +19,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = () => {
   const [isMenuOpened, setIsMenuOpened] = React.useState(false);
   return (
-    <StyledHeader>
+    <header>
       <Navigation>
         <LogoWrapper href="/">
           <Logo />
@@ -53,7 +52,7 @@ const Header: React.FC<HeaderProps> = () => {
           <HamburgerMenu isMenuOpened={isMenuOpened} />
         </HamburgerWrapper>
       </Navigation>
-    </StyledHeader>
+    </header>
   );
 };
 

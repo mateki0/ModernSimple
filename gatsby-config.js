@@ -5,16 +5,14 @@ module.exports = {
     author: `Mateusz Bętka`,
   },
   plugins: [
-    `gatsby-plugin-netlify-cms`,
-    `gatsby-plugin-netlify`,
-    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-netlify-cms`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        enableIdentityWidget: false,
       },
     },
+    `gatsby-plugin-netlify`,
+    `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
@@ -41,8 +39,30 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `backgrounds`,
-        path: `${__dirname}/src/projects`, // wherever background images are stored
+        name: `portfolio`,
+        path: `${__dirname}/static/content`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 906,
+            },
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          `gatsby-remark-prismjs`,
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`,
+        ],
       },
     },
     {

@@ -1,15 +1,37 @@
 backend:
   name: github
+  branch: master
   repo: mateki0/ModernSimple
 media_folder: static/assets
 public_folder: /assets
 collections:
-  - name: blog
-    label: Blog
-    folder: blog
+  - name: 'images'
+    label: 'Zdjęcia'
+    folder: 'images'
     create: true
     fields:
-      - { name: date, label: Date, widget: datetime }
-      - { name: title, label: Title }
-      - { name: image, label: Image, widget: 'image', required: true }
-      - { name: body, label: Body, widget: markdown }
+      - { name: 'imgName', label: 'Nazwa zdjęcia', required: true }
+      - { name: 'imgDescription', label: 'Opis zdjęcia', required: true }
+      - {
+          name: 'category',
+          label: 'Kategorie',
+          widget: 'relation',
+          collection: 'image-categories',
+          searchFields: ['title'],
+          valueField: 'title',
+          required: true,
+        }
+      - { name: 'image', label: 'Zdjęcie', widget: 'image', required: true }
+
+  - name: 'image-categories'
+    label: 'Kategorie Zdjęć'
+    folder: 'content/portfolio'
+    create: true
+    fields:
+      - { label: 'Nazwa Kategorii dla zdjęć', name: 'title', widget: 'string', required: true }
+      - {
+          label: 'Tytuł podstrony dla kategorii artkułów',
+          name: 'pageTitle',
+          widget: 'string',
+          required: true,
+        }

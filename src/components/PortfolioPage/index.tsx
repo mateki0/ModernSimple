@@ -13,10 +13,11 @@ import ImageMask from './styled/ImageMask';
 const PortfolioPage: React.FC = () => {
   const { allFile } = useStaticQuery(graphql`
     query {
-      allFile(filter: { relativeDirectory: { eq: "backgrounds" } }) {
+      allFile(filter: { sourceInstanceName: { eq: "backgrounds" } }) {
         edges {
           node {
             id
+            name
             childImageSharp {
               fluid(maxWidth: 906, maxHeight: 680) {
                 ...GatsbyImageSharpFluid
@@ -27,9 +28,14 @@ const PortfolioPage: React.FC = () => {
       }
     }
   `);
+
+  // const handleIdentifiactions = () => {
+  //   setQueriedImgs(identifiactions);
+  // };
+
   const { node } = allFile.edges;
-  console.log(allFile);
-  console.log('node', node);
+  console.log('queried', allFile);
+
   return (
     <PortfolioWrapper>
       <FiltersWrapper>
