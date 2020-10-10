@@ -9,10 +9,11 @@ const StyledModal = styled(ReactModal)`
   left: 0;
   right: 0;
   top: 200px;
-  width: auto;
+  width: 80vw;
   padding: 20px 20px 20px 20px;
   height: auto;
   overflow-y: auto;
-  border: 2px solid #eca72Ca;
+  border: 2px solid #eca72c;
+  border-radius: 25px;
 `;
 export default StyledModal;
