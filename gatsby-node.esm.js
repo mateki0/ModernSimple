@@ -1,64 +1,54 @@
-const path = require(`path`);
-const { createFilePath } = require('gatsby-source-filesystem');
+const path = require(`path`)
+const { createFilePath } = require(`gatsby-source-filesystem`)
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions;
-
-  if (node.internal.type === 'MarkdownRemark') {
-    const value = createFilePath({ node, getNode });
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = createFilePath({ node, getNode, basePath: 'portfolio/categories' })
     createNodeField({
-      name: 'slug',
       node,
-      value,
-    });
+      name: `slug`,
+      value: `/portfolio${slug}`,
+    })
   }
-};
+}
 
-const buildPages = (edges, createPage) => {
-  edges.map((page) => {
-    console.log(`Creating page ${JSON.stringify(page.node)}`);
-
-    createPage({
-      path: page.node.fields.slug,
-      component: path.resolve('./src/templates/PortfolioTemplate.tsx'),
-      context: {
-        slug: page.node.fields.slug,
-      },
-    });
-  });
-};
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions;
-
-  const fetchAllImages = await graphql(`
-    query {
-      allFile(filter: { extension: { regex: "/(jpeg|jpg|gif|png)/" } }) {
-        nodes {
-          id
-        }
-      }
-    }
-  `);
-  if (fetchAllImages.errors) {
-    throw fetchAllImages.errors;
-  }
-  console.log(fetchAllImages);
+  const { createPage } = actions
   const result = await graphql(`
     query {
-      allMarkdownRemark(limit: 1000) {
+      allMarkdownRemark {
         edges {
           node {
             fields {
               slug
             }
+            frontmatter {
+              imgName
+              imgDescription
+              category
+              image
+            }
           }
         }
       }
     }
-  `);
-  if (result.errors) {
-    throw result.errors;
-  }
-  console.log(result.data.allMarkdownRemark.edges);
-  buildPages(result.data.allMarkdownRemark.edges, createPage);
-};
+  `)
+
+  const allImages = Array.from(result.data.allMarkdownRemark.edges.filter(({ node }) => node.fields.slug.startsWith('/portfolio/images')), ({ node }) => node.frontmatter)
+  const allCategories = Array.from(result.data.allMarkdownRemark.edges.filter(({ node }) => node.fields.slug.startsWith('/portfolio') && !node.fields.slug.startsWith('/portfolio/images')), ({ node }) => ({ slug: node.fields.slug, name: node.fields.slug[node.fields.slug.length - 1] === '/' ? node.fields.slug.replace('/portfolio/', '').slice(0, -1) : node.fields.slug.replace('/portfolio/', '')}))
+  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    if (!node.fields.slug.startsWith('/portfolio/images')) {
+      const categoryName = node.fields.slug[node.fields.slug.length - 1] === '/' ? node.fields.slug.replace('/portfolio/', '').slice(0, -1) : node.fields.slug.replace('/portfolio/', '')
+      createPage({
+        path: node.fields.slug,
+        component: path.resolve(`./src/templates/PortfolioTemplate.tsx`),
+        context: {
+          images: allImages.filter(image => image.category === categoryName),
+          categories: allCategories,
+          currentCategoryName: categoryName
+        },
+      })
+    }
+  })
+}
