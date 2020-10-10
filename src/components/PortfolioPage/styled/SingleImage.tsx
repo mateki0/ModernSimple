@@ -7,10 +7,13 @@ const SingleImage = styled.div`
   height: auto;
   position: relative;
   transition: all 0.5s;
-  &:hover {
-    cursor: pointer;
-    ${ImageMask} {
-      opacity: 1;
+
+  @media only screen and (min-width: 1024px) {
+    &:hover {
+      cursor: pointer;
+      ${ImageMask} {
+        opacity: 1;
+      }
     }
   }
 `;
