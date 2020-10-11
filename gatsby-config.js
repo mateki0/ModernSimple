@@ -44,6 +44,34 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `/portfolio/identyfikacje/`,
+        path: `${__dirname}/static/assets/Identyfikacje`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `/portfolio/metryczki/`,
+        path: `${__dirname}/static/assets/Metryczki`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `/portfolio/obrazki/`,
+        path: `${__dirname}/static/assets/Obrazki`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `/portfolio/zaproszenia/`,
+        path: `${__dirname}/static/assets/Zaproszenia`,
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [

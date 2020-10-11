@@ -47,8 +47,8 @@ const LastProjects: React.FC = () => {
       <Heading>Ostatnie Projekty</Heading>
       {/* <SliderWrapper>
         <Img fluid={node.childImageSharp.fluid} key={node.id} alt="project img" />
-      </SliderWrapper>
-      <ButtonsWrapper>
+      </SliderWrapper> */}
+      {/* <ButtonsWrapper>
         <SliderButton onClick={() => handlePrevious()} rotate="true">
           <Arrow />
         </SliderButton>

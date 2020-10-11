@@ -1,6 +1,6 @@
 const path = require(`path`);
 const { createFilePath } = require('gatsby-source-filesystem');
-
+const fs = require('fs');
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
@@ -17,7 +17,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 const buildPages = (edges, createPage) => {
   edges.map((page) => {
     console.log(`Creating page ${JSON.stringify(page.node)}`);
-
+    const 
     createPage({
       path: page.node.fields.slug,
       component: path.resolve('./src/templates/PortfolioTemplate.tsx'),
@@ -39,10 +39,11 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `);
+  console.log(fetchAllImages);
   if (fetchAllImages.errors) {
     throw fetchAllImages.errors;
   }
-  console.log(fetchAllImages);
+
   const result = await graphql(`
     query {
       allMarkdownRemark(limit: 1000) {

@@ -9,8 +9,16 @@ import PortfolioWrapper from './styled/PortfolioWrapper';
 import SingleImage from './styled/SingleImage';
 import DescriptionSpan from './styled/DescriptionSpan';
 import ImageMask from './styled/ImageMask';
+import StyledModal from './styled/StyledModal';
+import ModalImgWrapper from './styled/ModalImgWrapper';
 
 const PortfolioPage: React.FC = () => {
+  React.useEffect(() => {
+    StyledModal.setAppElement('#___gatsby');
+    setIsOpen(false);
+  }, []);
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [modalImg, setModalImg] = React.useState();
   const { allFile } = useStaticQuery(graphql`
     query {
       allFile(filter: { sourceInstanceName: { eq: "backgrounds" } }) {
@@ -29,9 +37,13 @@ const PortfolioPage: React.FC = () => {
     }
   `);
 
-  // const handleIdentifiactions = () => {
-  //   setQueriedImgs(identifiactions);
-  // };
+  const handleModalOpen = (index) => {
+    setIsOpen(true);
+    setModalImg(node[index].node.childImageSharp.fluid);
+  };
+  const handleModalClose = () => {
+    setIsOpen(false);
+  };
 
   const { node } = allFile.edges;
   console.log('queried', allFile);
@@ -54,13 +66,25 @@ const PortfolioPage: React.FC = () => {
       </FiltersWrapper>
 
       <ImagesWrapper>
-        {allFile.edges.map((image, index) => (
-          <SingleImage key={index}>
-            <Img fluid={image.node.childImageSharp.fluid} />
-            <ImageMask>
-              <DescriptionSpan>Something</DescriptionSpan>
-            </ImageMask>
-          </SingleImage>
+        {node.map((image, index) => (
+          <React.Fragment key={index}>
+            <SingleImage onClick={() => handleModalOpen(index)}>
+              <Img fluid={image.node.childImageSharp.fluid} />
+              <ImageMask>
+                <DescriptionSpan>Opis</DescriptionSpan>
+              </ImageMask>
+            </SingleImage>
+
+            <StyledModal isOpen={isOpen} onRequestClose={handleModalClose}>
+              {modalImg && modalImg !== undefined ? (
+                <ModalImgWrapper>
+                  <Img fluid={modalImg} />
+                </ModalImgWrapper>
+              ) : (
+                ''
+              )}
+            </StyledModal>
+          </React.Fragment>
         ))}
       </ImagesWrapper>
     </PortfolioWrapper>
