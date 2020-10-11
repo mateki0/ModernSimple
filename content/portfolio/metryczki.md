@@ -1,4 +1,4 @@
 ---
-title: Metryczki
+title: metryczki
 pageTitle: metryczki
 ---
