@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-const FilterButton = styled.button`
+const FilterButton = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   background: #eca72c;
   border: none;
   border-radius: 25px;
@@ -9,7 +13,6 @@ const FilterButton = styled.button`
     background: #2c9692;
     cursor: pointer;
   }
-  width: 100%;
 `;
 
 export default FilterButton;

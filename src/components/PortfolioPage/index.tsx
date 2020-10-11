@@ -2,7 +2,6 @@ import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import FilterButton from './styled/FilterButton';
-import FilterButtonSpan from './styled/FilterButtonSpan';
 import FiltersWrapper from './styled/FiltersWrapper';
 import ImagesWrapper from './styled/ImagesWrapper';
 import PortfolioWrapper from './styled/PortfolioWrapper';
@@ -11,38 +10,43 @@ import DescriptionSpan from './styled/DescriptionSpan';
 import ImageMask from './styled/ImageMask';
 import StyledModal from './styled/StyledModal';
 import ModalImgWrapper from './styled/ModalImgWrapper';
+import FilterButtonSpan from './styled/FilterButtonSpan';
 
 const PortfolioPage: React.FC = () => {
-  // React.useEffect(() => {
-  //   StyledModal.setAppElement('#___gatsby');
-  //   setIsOpen(false);
-  // }, []);
-  // const [isOpen, setIsOpen] = React.useState(false);
-  // const [modalImg, setModalImg] = React.useState();
-  // const { allFile } = useStaticQuery(graphql`
-  //   query {
-  //     allFile(filter: { relativeDirectory: { eq: "backgrounds" } }) {
-  //       edges {
-  //         node {
-  //           id
-  //           childImageSharp {
-  //             fluid(maxWidth: 1500) {
-  //               ...GatsbyImageSharpFluid
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `);
-  // const node = allFile.edges;
-  // const handleModalOpen = (index) => {
-  //   setIsOpen(true);
-  //   setModalImg(node[index].node.childImageSharp.fluid);
-  // };
-  // const handleModalClose = () => {
-  //   setIsOpen(false);
-  // };
+  React.useEffect(() => {
+    StyledModal.setAppElement('#___gatsby');
+    setIsOpen(false);
+  }, []);
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [modalImg, setModalImg] = React.useState();
+  const { allFile } = useStaticQuery(graphql`
+    query {
+      allFile(filter: { sourceInstanceName: { eq: "allImgs" } }) {
+        edges {
+          node {
+            id
+            name
+            childImageSharp {
+              fluid(maxWidth: 906, maxHeight: 680) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const handleModalOpen = (index) => {
+    setIsOpen(true);
+    setModalImg(node[index].node.childImageSharp.fluid);
+  };
+  const handleModalClose = () => {
+    setIsOpen(false);
+  };
+
+  const node = allFile.edges;
+  console.log('queried', allFile);
 
   return (
     <PortfolioWrapper>
@@ -61,7 +65,7 @@ const PortfolioPage: React.FC = () => {
         </FilterButton>
       </FiltersWrapper>
 
-      {/* <ImagesWrapper>
+      <ImagesWrapper>
         {node.map((image, index) => (
           <React.Fragment key={index}>
             <SingleImage onClick={() => handleModalOpen(index)}>
@@ -82,7 +86,7 @@ const PortfolioPage: React.FC = () => {
             </StyledModal>
           </React.Fragment>
         ))}
-      </ImagesWrapper> */}
+      </ImagesWrapper>
     </PortfolioWrapper>
   );
 };

@@ -1,4 +1,0 @@
----
-title: Zaproszenia
-pageTitle: zaproszenia
----

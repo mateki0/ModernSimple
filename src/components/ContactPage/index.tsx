@@ -6,11 +6,26 @@ import ContactForm from '../ContactForm';
 import ContactText from './styled/ContactText';
 import ContactSubheading from './styled/ContactSubheading';
 import ContactWrapper from './styled/ContactWrapper';
-
+import { useStaticQuery, graphql } from 'gatsby';
 interface ContactProps {
   displayMobile: boolean;
 }
 const ContactPage: React.FC<ContactProps> = () => {
+  const { allFile } = useStaticQuery(graphql`
+    query {
+      allImageSharp {
+        edges {
+          node {
+            id
+            fluid(maxWidth: 906, maxHeight: 680) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  `);
+  console.log(allFile);
   return (
     <ContactWrapper>
       <div>

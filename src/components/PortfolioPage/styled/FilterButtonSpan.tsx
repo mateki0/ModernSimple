@@ -9,5 +9,4 @@ const FilterButtonSpan = styled.span`
     font-size: 26px;
   }
 `;
-
 export default FilterButtonSpan;
