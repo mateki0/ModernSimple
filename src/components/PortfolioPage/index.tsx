@@ -2,7 +2,6 @@ import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import FilterButton from './styled/FilterButton';
-import FilterButtonSpan from './styled/FilterButtonSpan';
 import FiltersWrapper from './styled/FiltersWrapper';
 import ImagesWrapper from './styled/ImagesWrapper';
 import PortfolioWrapper from './styled/PortfolioWrapper';
@@ -11,6 +10,7 @@ import DescriptionSpan from './styled/DescriptionSpan';
 import ImageMask from './styled/ImageMask';
 import StyledModal from './styled/StyledModal';
 import ModalImgWrapper from './styled/ModalImgWrapper';
+import FilterButtonSpan from './styled/FilterButtonSpan';
 
 const PortfolioPage: React.FC = () => {
   React.useEffect(() => {
@@ -21,7 +21,7 @@ const PortfolioPage: React.FC = () => {
   const [modalImg, setModalImg] = React.useState();
   const { allFile } = useStaticQuery(graphql`
     query {
-      allFile(filter: { sourceInstanceName: { eq: "backgrounds" } }) {
+      allFile(filter: { sourceInstanceName: { eq: "allImgs" } }) {
         edges {
           node {
             id
@@ -45,7 +45,7 @@ const PortfolioPage: React.FC = () => {
     setIsOpen(false);
   };
 
-  const { node } = allFile.edges;
+  const node = allFile.edges;
   console.log('queried', allFile);
 
   return (

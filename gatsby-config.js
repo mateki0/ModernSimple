@@ -40,35 +40,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `portfolio`,
-        path: `${__dirname}/static/content`,
+        path: `${__dirname}/static/content/`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `/portfolio/identyfikacje/`,
+        name: `allImgs`,
         path: `${__dirname}/static/assets/Identyfikacje`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `/portfolio/metryczki/`,
-        path: `${__dirname}/static/assets/Metryczki`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `/portfolio/obrazki/`,
-        path: `${__dirname}/static/assets/Obrazki`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `/portfolio/zaproszenia/`,
-        path: `${__dirname}/static/assets/Zaproszenia`,
       },
     },
     {
