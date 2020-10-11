@@ -1,4 +1,4 @@
 ---
-title: Identyfikacje Wizualne
+title: identyfikacje
 pageTitle: identyfikacje
 ---
