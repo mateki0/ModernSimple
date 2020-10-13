@@ -3,7 +3,8 @@ import styled from 'styled-components';
 const ContactWrapper = styled.div<{ displayMobile?: boolean }>`
   display: flex;
   flex-direction: column;
-  padding: 23px 0;
+  padding-bottom: 23px;
+  padding-top: 30px;
   border-bottom: 2px solid #eca72c;
   @media only screen and (min-width: 1024px) {
     padding: 50px 0 0 0;

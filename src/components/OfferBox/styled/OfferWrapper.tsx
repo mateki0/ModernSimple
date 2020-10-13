@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 const OfferWrapper = styled.div`
-  padding: 23px 0;
+  padding-bottom: 23px;
+  padding-top: 30px;
   width: calc(100% + 2 * 9px);
   margin-left: -9px;
   @media only screen and (min-width: 1024px) {
