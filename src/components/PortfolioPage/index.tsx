@@ -1,89 +1,75 @@
 import * as React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
-import FilterButton from './styled/FilterButton';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import FiltersWrapper from './styled/FiltersWrapper';
 import ImagesWrapper from './styled/ImagesWrapper';
 import PortfolioWrapper from './styled/PortfolioWrapper';
 import SingleImage from './styled/SingleImage';
 import DescriptionSpan from './styled/DescriptionSpan';
 import ImageMask from './styled/ImageMask';
-import StyledModal from './styled/StyledModal';
-import ModalImgWrapper from './styled/ModalImgWrapper';
 import FilterButtonSpan from './styled/FilterButtonSpan';
+import StyledImg from './styled/StyledImg';
 
 const PortfolioPage: React.FC = () => {
-  React.useEffect(() => {
-    StyledModal.setAppElement('#___gatsby');
-    setIsOpen(false);
-  }, []);
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [modalImg, setModalImg] = React.useState();
-  const { allFile } = useStaticQuery(graphql`
-    query {
-      allFile(filter: { sourceInstanceName: { eq: "allImgs" } }) {
+  const allFile = useStaticQuery(graphql`
+    query MyQuery {
+      allMarkdownRemark {
         edges {
           node {
             id
-            name
-            childImageSharp {
-              fluid(maxWidth: 906, maxHeight: 680) {
-                ...GatsbyImageSharpFluid
-              }
+            frontmatter {
+              image
+              imgDescription
+              imgName
             }
           }
         }
       }
     }
   `);
-
-  const handleModalOpen = (index) => {
-    setIsOpen(true);
-    setModalImg(node[index].node.childImageSharp.fluid);
-  };
-  const handleModalClose = () => {
-    setIsOpen(false);
-  };
-
-  const node = allFile.edges;
-  console.log('queried', allFile);
+  const allImages = allFile.allMarkdownRemark.edges.filter(
+    (item) => item.node.frontmatter.image !== null
+  );
 
   return (
     <PortfolioWrapper>
       <FiltersWrapper>
-        <FilterButton>
+        <Link to="./identyfikacje">
           <FilterButtonSpan>Identyfikacja wizualna</FilterButtonSpan>
-        </FilterButton>
-        <FilterButton>
+        </Link>
+        <Link to="./metryczki">
           <FilterButtonSpan>Metryczki</FilterButtonSpan>
-        </FilterButton>
-        <FilterButton>
+        </Link>
+        <Link to="./obrazki">
           <FilterButtonSpan>Obrazki dla dzieci</FilterButtonSpan>
-        </FilterButton>
-        <FilterButton>
+        </Link>
+        <Link to="./zaproszenia">
           <FilterButtonSpan>Zaproszenia</FilterButtonSpan>
-        </FilterButton>
+        </Link>
       </FiltersWrapper>
 
       <ImagesWrapper>
-        {node.map((image, index) => (
+        {allImages.map((image, index) => (
           <React.Fragment key={index}>
-            <SingleImage onClick={() => handleModalOpen(index)}>
-              <Img fluid={image.node.childImageSharp.fluid} />
+            <SingleImage>
+              <StyledImg src={image.node.frontmatter.image} />
               <ImageMask>
-                <DescriptionSpan>Opis</DescriptionSpan>
+                <DescriptionSpan>{image.node.frontmatter.imgDescription}</DescriptionSpan>
               </ImageMask>
             </SingleImage>
 
-            <StyledModal isOpen={isOpen} onRequestClose={handleModalClose}>
+            {/* <StyledModal isOpen={isOpen} onRequestClose={handleModalClose}>
               {modalImg && modalImg !== undefined ? (
                 <ModalImgWrapper>
-                  <Img fluid={modalImg} />
+                  <StyledGatsbyImgWrapper>
+                    <Img fluid={modalImg} />
+                  </StyledGatsbyImgWrapper>
+                  <ModalName>Nazwa</ModalName>
+                  <ModalDescription>Opis</ModalDescription>
                 </ModalImgWrapper>
               ) : (
                 ''
               )}
-            </StyledModal>
+            </StyledModal> */}
           </React.Fragment>
         ))}
       </ImagesWrapper>

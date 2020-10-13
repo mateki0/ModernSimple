@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import DescriptionSpan from './DescriptionSpan';
 import ImageMask from './ImageMask';
 
 const SingleImage = styled.div`
