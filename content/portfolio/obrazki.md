@@ -1,4 +1,0 @@
----
-title: Obrazki
-pageTitle: obrazki
----

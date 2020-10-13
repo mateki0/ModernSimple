@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const FilterButton = styled.a`
+const FilterButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,6 +12,9 @@ const FilterButton = styled.a`
   &:hover {
     background: #2c9692;
     cursor: pointer;
+  }
+  > * {
+    text-decoration: none;
   }
 `;
 
