@@ -7,7 +7,7 @@ public_folder: /assets
 collections:
   - name: 'images'
     label: 'Zdjęcia'
-    folder: 'images'
+    folder: 'content/portfolio/images'
     create: true
     fields:
       - { name: 'imgName', label: 'Nazwa zdjęcia', required: true }
@@ -25,7 +25,7 @@ collections:
 
   - name: 'image-categories'
     label: 'Kategorie Zdjęć'
-    folder: 'content/portfolio'
+    folder: 'content/portfolio/categories'
     create: true
     fields:
       - { label: 'Nazwa Kategorii dla zdjęć', name: 'title', widget: 'string', required: true }
