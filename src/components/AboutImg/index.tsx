@@ -10,16 +10,16 @@ const AboutImg: React.FC = () => {
   
   const query= useStaticQuery(graphql`
      query{
-        logo: file(relativePath: { eq: "ms.png" }) {
+        logo: file(absolutePath: { eq: "/home/mateusz/ModernSimple/static/images/ms.png" }) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 100) {
               ...GatsbyImageSharpFluid
             }
           }
         }
-        selfie: file(relativePath: { eq: "selfie.png" }) {
+        selfie: file(absolutePath: { eq: "/home/mateusz/ModernSimple/static/images/selfie.png" }) {
           childImageSharp {
-            fluid(quality: 90, maxWidth: 100) {
+            fluid(quality: 90, maxWidth: 420) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -30,6 +30,7 @@ const AboutImg: React.FC = () => {
   console.log(query)
   return (
     <AboutWrapper>
+      <div style={{width:'420px'}} >
       <Selfie
         widthMobile="180px"
         heightMobile="271px"
@@ -38,6 +39,7 @@ const AboutImg: React.FC = () => {
         fluid={query.selfie.childImageSharp.fluid}
         alt="My Image"
       />
+      </div>
       <AboutMeDescription displayMobile={false} />
       <AboutLogoWrapper>
         <LogoImage fluid={query.logo.childImageSharp.fluid} />
