@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
-const NavListItem = styled.li`
-  margin: 0;
-
+const NavListItem = styled.li<{ isOpen: boolean }>`
+  margin-bottom: ${(props) => (props.isOpen ? '30px' : '0')};
   @media only screen and (min-width: 1024px) {
     margin-right: 169px;
     padding: 1px 6px;

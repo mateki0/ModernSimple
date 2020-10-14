@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import FiltersWrapper from './styled/FiltersWrapper';
 import ImagesWrapper from './styled/ImagesWrapper';
 import PortfolioWrapper from './styled/PortfolioWrapper';
@@ -7,7 +7,7 @@ import SingleImage from './styled/SingleImage';
 import DescriptionSpan from './styled/DescriptionSpan';
 import ImageMask from './styled/ImageMask';
 import FilterButtonSpan from './styled/FilterButtonSpan';
-import StyledImg from './styled/StyledImg';
+
 import GatsbyImage from '../GatsbyImage';
 
 const PortfolioPage: React.FC = () => {
@@ -27,7 +27,6 @@ const PortfolioPage: React.FC = () => {
       }
     }
   `);
-  console.log(allFile);
   const allImages = allFile.allMarkdownRemark.edges.filter(
     (item) => item.node.frontmatter.image !== null
   );
@@ -35,18 +34,10 @@ const PortfolioPage: React.FC = () => {
   return (
     <PortfolioWrapper>
       <FiltersWrapper>
-        <Link to="./identyfikacje">
-          <FilterButtonSpan>Identyfikacja wizualna</FilterButtonSpan>
-        </Link>
-        <Link to="./metryczki">
-          <FilterButtonSpan>Metryczki</FilterButtonSpan>
-        </Link>
-        <Link to="./obrazki">
-          <FilterButtonSpan>Obrazki dla dzieci</FilterButtonSpan>
-        </Link>
-        <Link to="./zaproszenia">
-          <FilterButtonSpan>Zaproszenia</FilterButtonSpan>
-        </Link>
+        <FilterButtonSpan to="./identyfikacje">Identyfikacja wizualna</FilterButtonSpan>
+        <FilterButtonSpan to="./metryczki">Metryczki</FilterButtonSpan>
+        <FilterButtonSpan to="./obrazki">Obrazki dla dzieci</FilterButtonSpan>
+        <FilterButtonSpan to="./zaproszenia">Zaproszenia</FilterButtonSpan>
       </FiltersWrapper>
 
       <ImagesWrapper>
