@@ -7,27 +7,39 @@ import LogoImage from './styled/LogoImg';
 import Selfie from './styled/Selfie';
 
 const AboutImg: React.FC = () => {
-  
-  const query= useStaticQuery(graphql`
-     query{
-        logo: file(relativePath: { eq: "ms.png" }) {
-          childImageSharp {
-            fluid(quality: 90, maxWidth: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+  const { selfie } = useStaticQuery(
+    graphql`
+      query {
         selfie: file(relativePath: { eq: "selfie.png" }) {
           childImageSharp {
-            fluid(quality: 90, maxWidth: 420) {
+            fluid(quality: 90, maxWidth: 4160) {
               ...GatsbyImageSharpFluid
             }
           }
         }
       }
     `
-)
-  console.log(query)
+  );
+//   const query= useStaticQuery(graphql`
+//      query{
+//         logo: file(relativePath: { eq: "ms.png" }) {
+//           childImageSharp {
+//             fluid(quality: 90, maxWidth: 100) {
+//               ...GatsbyImageSharpFluid
+//             }
+//           }
+//         }
+//         selfie: file(relativePath: { eq: "selfie.png" }) {
+//           childImageSharp {
+//             fluid(quality: 90, maxWidth: 420) {
+//               ...GatsbyImageSharpFluid
+//             }
+//           }
+//         }
+//       }
+//     `
+// )
+  console.log(selfie)
   return (
     <AboutWrapper>
       <div style={{width:'420px'}} >
@@ -36,13 +48,13 @@ const AboutImg: React.FC = () => {
         heightMobile="271px"
         width="420px"
         height="632px"
-        fluid={query.selfie.childImageSharp.fluid}
+        fluid={selfie.childImageSharp.fluid}
         alt="My Image"
       />
       </div>
       <AboutMeDescription displayMobile={false} />
       <AboutLogoWrapper>
-        <LogoImage fluid={query.logo.childImageSharp.fluid} />
+        <LogoImage fluid={selfie.childImageSharp.fluid} />
       </AboutLogoWrapper>
     </AboutWrapper>
   );
