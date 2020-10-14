@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import BackgroundImage from 'gatsby-background-image';
-const LogoImage = styled(BackgroundImage)`
+import Img from 'gatsby-image';
+const LogoImage = styled(Img)<{ fluid:any }>`
   width: 82px;
   height: 271px;
   @media only screen and (min-width: 1024px) {

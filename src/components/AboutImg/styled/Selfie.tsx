@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-
-const Selfie = styled.img<{ widthMobile: string; heightMobile: string }>`
+import  Img  from 'gatsby-image'
+const Selfie = styled(Img)<{ widthMobile: string; heightMobile: string; width:string; height:string; fluid:any }>`
   width: ${(props) => props.widthMobile};
   height: ${(props) => props.heightMobile};
   border-radius: 25px;
