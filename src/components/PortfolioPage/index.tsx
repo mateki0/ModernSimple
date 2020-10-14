@@ -8,6 +8,7 @@ import DescriptionSpan from './styled/DescriptionSpan';
 import ImageMask from './styled/ImageMask';
 import FilterButtonSpan from './styled/FilterButtonSpan';
 import StyledImg from './styled/StyledImg';
+import GatsbyImage from '../GatsbyImage';
 
 const PortfolioPage: React.FC = () => {
   const allFile = useStaticQuery(graphql`
@@ -17,15 +18,16 @@ const PortfolioPage: React.FC = () => {
           node {
             id
             frontmatter {
-              image
               imgDescription
               imgName
+              image
             }
           }
         }
       }
     }
   `);
+  console.log(allFile);
   const allImages = allFile.allMarkdownRemark.edges.filter(
     (item) => item.node.frontmatter.image !== null
   );
@@ -51,7 +53,7 @@ const PortfolioPage: React.FC = () => {
         {allImages.map((image, index) => (
           <React.Fragment key={index}>
             <SingleImage>
-              <StyledImg src={image.node.frontmatter.image} />
+              <GatsbyImage filename={image.node.frontmatter.image} />
               <ImageMask>
                 <DescriptionSpan>{image.node.frontmatter.imgDescription}</DescriptionSpan>
               </ImageMask>
