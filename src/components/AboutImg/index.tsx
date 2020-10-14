@@ -10,14 +10,14 @@ const AboutImg: React.FC = () => {
   
   const query= useStaticQuery(graphql`
      query{
-        logo: file(absolutePath: { eq: "/home/mateusz/ModernSimple/static/images/ms.png" }) {
+        logo: file(relativePath: { eq: "/home/mateusz/ModernSimple/static/images/ms.png" }) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 100) {
               ...GatsbyImageSharpFluid
             }
           }
         }
-        selfie: file(absolutePath: { eq: "/home/mateusz/ModernSimple/static/images/selfie.png" }) {
+        selfie: file(relativePath: { eq: "selfie.png" }) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 420) {
               ...GatsbyImageSharpFluid
