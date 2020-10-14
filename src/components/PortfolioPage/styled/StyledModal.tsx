@@ -1,7 +1,6 @@
-import ReactModal from 'react-modal';
 import styled from 'styled-components';
 
-const StyledModal = styled(ReactModal)`
+const StyledModal = styled.div`
   z-index: 999;
   position: absolute;
   margin-left: auto;
