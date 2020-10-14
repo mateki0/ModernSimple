@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-
-const FilterButtonSpan = styled.span`
+import { Link } from 'gatsby';
+const FilterButtonSpan = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;

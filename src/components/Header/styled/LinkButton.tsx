@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
-const LinkButton = styled.button`
+const LinkButton = styled(Link)`
   background: transparent;
   border: none;
   color: #fff;
@@ -10,7 +11,6 @@ const LinkButton = styled.button`
   text-decoration: none;
   padding: 0;
   font-family: 'Nunito', sans-serif;
-  margin-bottom: 30px;
   &:hover {
     cursor: pointer;
     color: #27867f;

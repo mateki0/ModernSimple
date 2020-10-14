@@ -1,9 +1,6 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
 import Navigation from './styled/Navigation';
 import LogoWrapper from './styled/LogoWrapper';
-import LogoIconWrapper from './styled/LogoIconWrapper';
-import LogoText from './styled/LogoText';
 import Menu from './styled/Menu';
 import NavList from './styled/NavList';
 import NavListItem from './styled/NavListItem';
@@ -18,37 +15,48 @@ interface HeaderProps {
 }
 const Header: React.FC<HeaderProps> = () => {
   const [isMenuOpened, setIsMenuOpened] = React.useState(false);
+  const menuEl = React.useRef<HTMLDivElement>();
+  const closeOnClickOutside = (event) => {
+    if (menuEl && !menuEl.current.contains(event.target)) {
+      setIsMenuOpened(false);
+    }
+  };
+  React.useEffect(() => {
+    window.addEventListener('click', closeOnClickOutside);
+
+    return () => window.removeEventListener('click', closeOnClickOutside);
+  });
   return (
     <header>
       <Navigation>
         <LogoWrapper href="/">
           <Logo />
         </LogoWrapper>
-        <Menu isOpen={isMenuOpened}>
+        <Menu isOpen={isMenuOpened} ref={menuEl}>
           <NavList>
-            <NavListItem>
-              <Link to="/o-mnie">
-                <LinkButton>O mnie</LinkButton>
-              </Link>
+            <NavListItem isOpen={isMenuOpened}>
+              <LinkButton to="/o-mnie" activeStyle={{ color: '#27867f' }}>
+                O mnie
+              </LinkButton>
             </NavListItem>
-            <NavListItem>
-              <Link to="/portfolio">
-                <LinkButton>Portfolio</LinkButton>
-              </Link>
+            <NavListItem isOpen={isMenuOpened}>
+              <LinkButton to="/portfolio" activeStyle={{ color: '#27867f' }}>
+                Portfolio
+              </LinkButton>
             </NavListItem>
-            <NavListItem>
-              <Link to="/uslugi">
-                <LinkButton>Usługi</LinkButton>
-              </Link>
+            <NavListItem isOpen={isMenuOpened}>
+              <LinkButton to="/uslugi" activeStyle={{ color: '#27867f' }}>
+                Usługi
+              </LinkButton>
             </NavListItem>
-            <NavListItem>
-              <Link to="/kontakt">
-                <LinkButton>Kontakt</LinkButton>
-              </Link>
+            <NavListItem isOpen={isMenuOpened}>
+              <LinkButton to="/kontakt" activeStyle={{ color: '#27867f' }}>
+                Kontakt
+              </LinkButton>
             </NavListItem>
           </NavList>
         </Menu>
-        <HamburgerWrapper onClick={() => setIsMenuOpened(!isMenuOpened)}>
+        <HamburgerWrapper ref={menuEl} onClick={() => setIsMenuOpened(!isMenuOpened)}>
           <HamburgerMenu isMenuOpened={isMenuOpened} />
         </HamburgerWrapper>
       </Navigation>
