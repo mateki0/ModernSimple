@@ -12,14 +12,14 @@ const OfferBox: React.FC = () => {
         desktop: file(relativePath: { eq: "kompBg.png" }) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 4160) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              ...GatsbyImageSharpFluid
             }
           }
         }
       }
     `
   );
-  console.log(desktop.childImageSharp);
+
   return (
     <OfferWrapper>
       <OfferBgImg fluid={desktop.childImageSharp.fluid}>
