@@ -12,7 +12,10 @@ const Menu = styled.div<{ isOpen: boolean }>`
   justify-content: center;
   width: 50vw;
   height: 50vh;
-  border-radius: 25px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+
   visibility: ${(props) => (props.isOpen ? 'visible' : 'hidden')};
   opacity: ${(props) => (props.isOpen ? '1' : '0')};
   transition: ${(props) =>

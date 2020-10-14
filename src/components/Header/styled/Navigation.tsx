@@ -10,7 +10,6 @@ const Navigation = styled.nav`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-
   background-color: #fff;
   border-bottom: 2px solid #eca72c;
   @media only screen and (min-width: 1024px) {
