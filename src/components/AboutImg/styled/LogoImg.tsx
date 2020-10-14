@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-
-const LogoImage = styled.img`
+import BackgroundImage from 'gatsby-background-image';
+const LogoImage = styled(BackgroundImage)`
   width: 82px;
   height: 271px;
   @media only screen and (min-width: 1024px) {
