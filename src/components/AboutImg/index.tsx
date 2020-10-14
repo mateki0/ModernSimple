@@ -10,7 +10,7 @@ const AboutImg: React.FC = () => {
   const { selfie } = useStaticQuery(
     graphql`
       query {
-        selfie: file(relativePath: { eq: "selfie.png" }) {
+        selfie: file(relativePath: { eq: "kompBg.png" }) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 4160) {
               ...GatsbyImageSharpFluid
