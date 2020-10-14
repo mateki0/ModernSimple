@@ -1,13 +1,28 @@
 import * as React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import OfferWrapper from './styled/OfferWrapper';
 import SingleOffer from './styled/SingleOffer';
 import SingleOfferSpan from './styled/SingleOfferSpan';
 import OfferBgImg from './styled/OfferBgImg';
 
 const OfferBox: React.FC = () => {
+  const { desktop } = useStaticQuery(
+    graphql`
+      query {
+        desktop: file(relativePath: { eq: "kompBg.png" }) {
+          childImageSharp {
+            fluid(quality: 90, maxWidth: 4160) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+          }
+        }
+      }
+    `
+  );
+  console.log(desktop.childImageSharp);
   return (
     <OfferWrapper>
-      <OfferBgImg>
+      <OfferBgImg fluid={desktop.childImageSharp.fluid}>
         <SingleOffer href="/uslugi" position="end" row="1/1" bgHover="#27867f" bgColor="#eca72c">
           <SingleOfferSpan> Identyfikacja wizualna</SingleOfferSpan>
         </SingleOffer>

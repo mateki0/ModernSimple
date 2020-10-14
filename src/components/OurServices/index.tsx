@@ -1,14 +1,14 @@
 import * as React from 'react';
-import ColumnsWrapper from '../Cooperation/styled/ColumnsWrapper';
-import Heading from '../Cooperation/styled/Heading';
 
+import Heading from '../Cooperation/styled/Heading';
 import ServicesWrapper from './styled/ServicesWrapper';
-import ColumnText from '../Cooperation/styled/ColumnText';
 import AdvertiseMaterialsUl from './styled/AdvertiseMaterialsUl';
 import AdvertiseMaterialItem from './styled/AdvertiseMaterialItem';
 import LogoType from './styled/LogoType';
+import ColumnsWrapper from '../Cooperation/styled/ColumnsWrapper';
 import ColumnItem from '../Cooperation/styled/ColumnItem';
 import ColumnTitle from '../Cooperation/styled/ColumnTitle';
+import ColumnText from '../Cooperation/styled/ColumnText';
 
 const OurServices: React.FC = () => {
   return (
