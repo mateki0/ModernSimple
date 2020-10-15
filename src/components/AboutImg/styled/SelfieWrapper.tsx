@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-const SelfieWrapper = styled.div<{widthMobile: string; heightMobile: string; width:string; height:string;}>`
-  width: ${(props) => props.widthMobile};
-  height: ${(props) => props.heightMobile};
+const SelfieWrapper = styled.div<{width:string; height:string;}>`
+  width:40vw;
+  height:auto;
   @media only screen and (min-width: 1024px) {
-    
     width: ${(props) => props.width};
     height: 100%;
   }

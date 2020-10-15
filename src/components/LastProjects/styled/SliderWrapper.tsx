@@ -6,9 +6,12 @@ const SliderWrapper = styled.div`
   height: 181px;
   position: relative;
   margin-top: 23px;
+  >*{
+    max-height:650px;
+  }
   @media only screen and (min-width: 1024px) {
     width: 800px;
-    height: auto;
+    height:100%;
     margin-top: 50px;
   }
   @media only screen and (min-width: 1280px) {

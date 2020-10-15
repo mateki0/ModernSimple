@@ -35,8 +35,7 @@ const AboutImg: React.FC = () => {
       console.log(query)
   return (
     <AboutWrapper>
-      <SelfieWrapper widthMobile="180px"
-        heightMobile="271px"
+      <SelfieWrapper
         width="420px"
         height="632px"
         >

@@ -7,45 +7,49 @@ import SliderWrapper from './styled/SliderWrapper';
 import ButtonsWrapper from './styled/ButtonsWrapper';
 import SliderButton from './styled/SliderButton';
 import Arrow from '../../assets/forward.svg';
+import GatsbyImage from '../GatsbyImage';
 
 const LastProjects: React.FC = () => {
   const [index, setIndex] = React.useState(0);
-  const { allFile } = useStaticQuery(graphql`
+  
+  const allFile = useStaticQuery(graphql`
     query {
-      allFile(filter: { sourceInstanceName: { eq: "allImgs" } }) {
+      allMarkdownRemark {
         edges {
           node {
             id
-            childImageSharp {
-              fluid(maxWidth: 906, maxHeight: 680) {
-                ...GatsbyImageSharpFluid
-              }
+            frontmatter {
+              imgDescription
+              imgName
+              image
+              category
             }
           }
         }
       }
     }
   `);
-  const length = allFile.edges.length - 1;
+  const identifications = allFile.allMarkdownRemark.edges.filter(
+    (item) => item.node.frontmatter.category === 'identyfikacje'
+  );
+  const length = identifications.length - 1;
   const handleNext = () => {
     index === length ? setIndex(0) : setIndex(index + 1);
   };
   const handlePrevious = () => {
     index === 0 ? setIndex(length) : setIndex(index - 1);
   };
-  const { node } = allFile.edges[index];
   React.useEffect(() => {
     const slideChange = setTimeout(() => {
       index === length ? setIndex(0) : setIndex(index + 1);
     }, 5000);
     return () => clearTimeout(slideChange);
   }, [index]);
-
   return (
     <LastProjectsWrapper>
       <Heading>Ostatnie Projekty</Heading>
       <SliderWrapper>
-        <Img fluid={node.childImageSharp.fluid} key={node.id} alt="project img" />
+        <GatsbyImage filename={identifications[index].node.frontmatter.image}   />
       </SliderWrapper>
       <ButtonsWrapper>
         <SliderButton onClick={() => handlePrevious()} rotate="true">
