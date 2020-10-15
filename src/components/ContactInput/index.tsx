@@ -9,6 +9,7 @@ interface InputProps {
   label: string;
   name: string;
   textarea?: boolean;
+  ref:any;
 }
 const ContactInput: React.FC<InputProps> = ({ width, height, label, name, textarea }) => {
   return (
