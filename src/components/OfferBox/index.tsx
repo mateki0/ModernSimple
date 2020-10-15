@@ -6,7 +6,7 @@ import SingleOfferSpan from './styled/SingleOfferSpan';
 import OfferBgImg from './styled/OfferBgImg';
 
 const OfferBox: React.FC = () => {
-  const { desktop } = useStaticQuery(
+  const  desktop  = useStaticQuery(
     graphql`
       query {
         desktop: file(relativePath: { eq: "kompBg.png" }) {
@@ -19,9 +19,10 @@ const OfferBox: React.FC = () => {
       }
     `
   );
+  console.log(desktop)
   return (
     <OfferWrapper>
-      <OfferBgImg fluid={desktop.childImageSharp.fluid}>
+      <OfferBgImg fluid={desktop.desktop.childImageSharp.fluid}>
         <SingleOffer href="/uslugi" position="end" row="1/1" bgHover="#27867f" bgColor="#eca72c">
           <SingleOfferSpan> Identyfikacja wizualna</SingleOfferSpan>
         </SingleOffer>
