@@ -4,6 +4,7 @@ import OfferWrapper from './styled/OfferWrapper';
 import SingleOffer from './styled/SingleOffer';
 import SingleOfferSpan from './styled/SingleOfferSpan';
 import OfferBgImg from './styled/OfferBgImg';
+import GatsbyImage from '../GatsbyImage';
 
 const OfferBox: React.FC = () => {
   const  desktop  = useStaticQuery(
@@ -22,7 +23,7 @@ const OfferBox: React.FC = () => {
   console.log(desktop)
   return (
     <OfferWrapper>
-      <OfferBgImg fluid={desktop.desktop.childImageSharp.fluid}>
+      <OfferBgImg >
         <SingleOffer href="/uslugi" position="end" row="1/1" bgHover="#27867f" bgColor="#eca72c">
           <SingleOfferSpan> Identyfikacja wizualna</SingleOfferSpan>
         </SingleOffer>
