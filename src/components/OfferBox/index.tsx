@@ -23,7 +23,7 @@ const OfferBox: React.FC = () => {
   console.log(desktop)
   return (
     <OfferWrapper>
-      <OfferBgImg >
+      <OfferBgImg fluid={desktop.desktop.childImageSharp.fluid}>
         <SingleOffer href="/uslugi" position="end" row="1/1" bgHover="#27867f" bgColor="#eca72c">
           <SingleOfferSpan> Identyfikacja wizualna</SingleOfferSpan>
         </SingleOffer>
