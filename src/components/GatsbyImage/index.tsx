@@ -22,7 +22,7 @@ const GatsbyImage: React.FC<{ filename: string }> = (props) => (
       }
     `}
     render={(data) => {
-      const file = props.filename.substr(8).replace(/ /g, '');
+      const file = props.filename.startsWith('/assets/') ? props.filename.substr(8).replace(/ /g, '') : props.filename;
       const image = data.images.edges.find((n) => {
         return n.node.relativePath.includes(file);
       });
