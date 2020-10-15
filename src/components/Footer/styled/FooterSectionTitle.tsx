@@ -7,6 +7,7 @@ const FooterSectionTitle = styled.h5`
   width: 100%;
   border-bottom: 2px solid #eca72c;
   margin: 5px 0;
+  white-space:nowrap;
   @media only screen and (min-width: 1024px) {
     font-size: 20px;
 

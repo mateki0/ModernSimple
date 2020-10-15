@@ -20,7 +20,6 @@ const OfferBox: React.FC = () => {
       }
     `
   );
-  console.log(desktop)
   return (
     <OfferWrapper>
       <OfferBgImg fluid={desktop.desktop.childImageSharp.fluid}>
