@@ -5,7 +5,7 @@ import AboutLogoWrapper from './styled/AboutLogoWrapper';
 import AboutWrapper from './styled/AboutWrapper';
 import LogoImage from './styled/LogoImg';
 import Selfie from './styled/Selfie';
-
+import  Img  from 'gatsby-image'
 const AboutImg: React.FC = () => {
 
   const query= useStaticQuery(graphql`
@@ -31,18 +31,19 @@ const AboutImg: React.FC = () => {
   return (
     <AboutWrapper>
       <div style={{width:'420px'}} >
-      <Selfie
+      {/* <Selfie
         widthMobile="180px"
         heightMobile="271px"
         width="420px"
         height="632px"
         fluid={query.selfie.childImageSharp.fluid}
         alt="My Image"
-      />
+      /> */}
+      <Img fluid={query.selfie.childImageSharp.fluid} />
       </div>
       <AboutMeDescription displayMobile={false} />
       <AboutLogoWrapper>
-        <LogoImage fluid={query.selfie.childImageSharp.fluid} />
+        <Img fluid={query.selfie.childImageSharp.fluid} />
       </AboutLogoWrapper>
     </AboutWrapper>
   );
