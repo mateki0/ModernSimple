@@ -3,8 +3,9 @@ const SelfieWrapper = styled.div<{widthMobile: string; heightMobile: string; wid
   width: ${(props) => props.widthMobile};
   height: ${(props) => props.heightMobile};
   @media only screen and (min-width: 1024px) {
+    
     width: ${(props) => props.width};
-    height: ${(props) => props.height};
+    height: 100%;
   }
 `
 export default SelfieWrapper;

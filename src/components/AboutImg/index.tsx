@@ -43,9 +43,11 @@ const AboutImg: React.FC = () => {
        <Selfie fluid={query.selfie.childImageSharp.fluid} />
       </SelfieWrapper>
       <AboutMeDescription displayMobile={false} />
+      
       <AboutLogoWrapper>
         <LogoImage fluid={query.logo.childImageSharp.fluid} />
       </AboutLogoWrapper>
+      
       
     </AboutWrapper>
   );
