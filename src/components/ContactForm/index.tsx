@@ -23,13 +23,14 @@ const ContactForm: React.FC<{ displayMobile: boolean; }> = ({ displayMobile }) =
     mode: 'onSubmit',
     resolver:resolver
   });
-  const onSubmit = data =>{
+  const onSubmit = (data, e) =>{
     fetch('/', {
       method:'POST',
       body:data
     })
     .then(data=>console.log(data))
     .catch(error=>console.log(error));
+    e.target.submit();
   } 
   
   return (
