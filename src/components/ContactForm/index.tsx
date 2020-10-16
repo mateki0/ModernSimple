@@ -1,6 +1,8 @@
 import * as React from 'react';
-import validate from '../../../utils/validate';
 import {useForm} from 'react-hook-form';
+import useYupValidationResolver from '../../../utils/resolver';
+import validationSchema from '../../../utils/validate';
+
 import ComponentWrapper from '../AboutMe/styled/ComponentWrapper';
 import SectionTitleSpan from '../AboutMe/styled/SectionTitleSpan';
 import SectionTitleWrapper from '../AboutMe/styled/SectionTitleWrapper';
@@ -9,17 +11,22 @@ import ContactButton from '../ContactButton';
 import ContactInput from '../ContactInput';
 import ButtonDiv from './styled/ButtonDiv';
 import FormWrapper from './styled/FormWrapper';
-type FormData = {
-  name: string;
-};
+interface IFormInput{
+  name:string;
+  email:string;
+  phone:number;
+  message:string;
+}
 const ContactForm: React.FC<{ displayMobile: boolean; }> = ({ displayMobile }) => {
-  const { register, handleSubmit } = useForm<FormData>({
-    defaultValues: {
-      name: ""
-    }
+  const resolver = useYupValidationResolver(validationSchema)
+  const {register, handleSubmit} = useForm<IFormInput>({
+    mode: 'onSubmit',
+    resolver:resolver
   });
-  const onSubmit = data => console.log(data);
-  const phoneRegExp = /^((\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/ 
+  const onSubmit = (e) =>{
+    e.target.submit();
+  } 
+  
   return (
     <ComponentWrapper displayMobile={displayMobile}>
       <SectionTitleWrapper>
@@ -28,11 +35,11 @@ const ContactForm: React.FC<{ displayMobile: boolean; }> = ({ displayMobile }) =
 
       <SectionWrapper>
         
-          <FormWrapper method="POST" name="contact" data-netlify="true" action="/dziekujemy" onSubmit={handleSubmit(onSubmit)} >
-            <ContactInput label="Imię i nazwisko" name="name" ref={register({required:true, maxLength:20})}/>
-            <ContactInput label="Adres e-mail" name="email" ref={register({required:true, pattern:/^[A-Za-z]+$/i })}/>
-            <ContactInput label="Telefon kontaktowy" name="phone" ref={register({pattern:phoneRegExp })}/>
-            <ContactInput label="Treść wiadomości" name="message" textarea={true} ref={register({required:true})} />
+          <FormWrapper method="POST" name="contact" onSubmit={handleSubmit(onSubmit)}  data-netlify="true" action="/dziekujemy">
+            <ContactInput label="Imię i nazwisko" name="name" forwardRef={register}/>
+            <ContactInput label="Adres e-mail" name="email" forwardRef={register}/>
+            <ContactInput label="Telefon kontaktowy" name="phone" forwardRef={register}/>
+            <ContactInput label="Treść wiadomości" name="message" textarea={true} forwardRef={register} />
             <ButtonDiv>
               <ContactButton />
             </ButtonDiv>
