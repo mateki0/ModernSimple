@@ -30,7 +30,7 @@ const ContactForm: React.FC<{ displayMobile: boolean; }> = ({ displayMobile }) =
     })
     .then(data=>console.log(data))
     .catch(error=>console.log(error));
-    e.target.submit();
+    
   } 
   
   return (
