@@ -8,8 +8,7 @@ import DescriptionSpan from './styled/DescriptionSpan';
 import ImageMask from './styled/ImageMask';
 import FilterButtonSpan from './styled/FilterButtonSpan';
 import GatsbyImage from '../GatsbyImage';
-import Gallery from '@browniebroke/gatsby-image-gallery'
-import '@browniebroke/gatsby-image-gallery/dist/style.css'
+
 const PortfolioPage: React.FC = () => {
   const allFile = useStaticQuery(graphql`
     query MyQuery {

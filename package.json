@@ -5,7 +5,6 @@
   "version": "0.1.0",
   "author": "Mateusz Bętka <mateki079@gmail.com>",
   "dependencies": {
-    "@browniebroke/gatsby-image-gallery": "^4.0.0",
     "@svgr/webpack": "^5.4.0",
     "babel-plugin-styled-components": "^1.11.1",
     "babel-preset-gatsby": "^0.5.12",
