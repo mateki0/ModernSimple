@@ -3,6 +3,7 @@ module.exports = {
     title: `Modern Simple`,
     description: `Professional graphic desginer portfolio`,
     author: `Mateusz Bętka`,
+    siteUrl: 'https://www.modernsimple.pl',
   },
   plugins: [
     {
@@ -11,6 +12,7 @@ module.exports = {
         enableIdentityWidget: false,
       },
     },
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
