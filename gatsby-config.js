@@ -12,6 +12,13 @@ module.exports = {
         enableIdentityWidget: false,
       },
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.modernsimple.pl',
+        sitemap: 'https://www.modernsimple.pl/sitemap.xml',
+      }
+    },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-react-helmet`,
