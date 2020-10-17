@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { createGlobalStyle } from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
-
+import IdentityModal, { useIdentityContext } from "react-netlify-identity-widget"
+import "react-netlify-identity-widget/styles.css"
 import Header from '../Header';
 import Footer from '../Footer';
 import StyledMain from './StyledMain';
@@ -27,6 +28,11 @@ body{
 }
 `;
 const Layout: React.FC<LayoutProps> = ({ children }) => {
+
+  const identity = useIdentityContext();
+  const [dialog, setDialog] = React.useState(false);
+  const name = (identity && identity.user && identity.user.user_metadata && identity.user.user_metadata.name) || "NoName";
+  const isLoggedIn = identity && identity.isLoggedIn
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -39,6 +45,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <>
+    <nav>
+      Login Status:
+      <button onClick={() => setDialog(true)}>
+      {isLoggedIn ? `Hello ${name}, Log out here!` : "LOG IN"}
+      </button>
+    </nav>
+    <IdentityModal showDialog={dialog} onCloseDialog={() => setDialog(false)} />
       <GlobalStyle />
       <Header siteTitle={data.site.siteMetadata?.title} />
       <StyledMain>{children}</StyledMain>

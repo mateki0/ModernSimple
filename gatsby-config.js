@@ -17,9 +17,15 @@ module.exports = {
 
   plugins: [
     {
+      resolve: `gatsby-plugin-netlify-identity`,
+      options: {
+        url: `https://modernsimple.pl/.netlify/identity` // required!
+      }
+    },
+    {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
-        enableIdentityWidget: false,
+        enableIdentityWidget: true,
       },
     },
     
