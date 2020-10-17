@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Modern Simple`,
-    description: `Professional graphic desginer portfolio`,
+    description: `Studio graficzne ModernSimple`,
     author: `Mateusz Bętka`,
     siteUrl: 'https://www.modernsimple.pl',
   },
