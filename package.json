@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Mateusz Bętka <mateki079@gmail.com>",
   "dependencies": {
+    "@browniebroke/gatsby-image-gallery": "^4.0.0",
     "@reach/dialog": "^0.11.2",
     "@reach/tabs": "^0.11.2",
     "@reach/visually-hidden": "^0.11.1",
@@ -20,6 +21,7 @@
     "gatsby-plugin-manifest": "^2.4.30",
     "gatsby-plugin-netlify": "^2.3.16",
     "gatsby-plugin-netlify-cms": "^4.3.14",
+    "gatsby-plugin-netlify-identity": "0.0.3",
     "gatsby-plugin-offline": "^3.2.28",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-react-helmet": "^3.3.11",

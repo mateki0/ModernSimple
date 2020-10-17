@@ -6,7 +6,7 @@ const GatsbyImage: React.FC<{ filename: string }> = (props) => (
   <StaticQuery
     query={graphql`
       query {
-        images: allFile {
+        images: allFile (filter: {sourceInstanceName: {eq: "allImgs"}}) {
           edges {
             node {
               relativePath
