@@ -42,13 +42,11 @@ const ContactForm: React.FC<{ displayMobile: boolean; }> = ({ displayMobile }) =
       })
     })
     .then(data=>{
-      console.log(data);
       window.location.href = "/dziekujemy"
     })
     .catch(error=>console.log(error));
     
   } 
-  console.log(errors)
   return (
 
     <ComponentWrapper displayMobile={displayMobile}>
