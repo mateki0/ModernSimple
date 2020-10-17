@@ -1,7 +1,10 @@
 import * as React from 'react';
 import { createGlobalStyle } from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
-import IdentityModal, { useIdentityContext, IdentityContextProvider } from 'react-netlify-identity-widget';
+import IdentityModal, {
+  useIdentityContext,
+  IdentityContextProvider,
+} from 'react-netlify-identity-widget';
 import 'react-netlify-identity-widget/styles.css';
 import Header from '../Header';
 import Footer from '../Footer';
