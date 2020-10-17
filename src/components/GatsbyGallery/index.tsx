@@ -2,18 +2,12 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Gallery from '@browniebroke/gatsby-image-gallery'
 import '@browniebroke/gatsby-image-gallery/dist/style.css'
-import styled from 'styled-components'
 interface IGalleryProps{
   filename:string;
   imgDescription:string;
   imgName:string;
 }
-const StyledGallery = styled(Gallery)`
-display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  padding-top: 23px;
-`
+
 const GatsbyGallery: React.FC = () => (
   
   <StaticQuery
@@ -39,7 +33,7 @@ const GatsbyGallery: React.FC = () => (
       const allImgs = data.allFile.edges.filter(item => item.node.childImageSharp !== null).map(({node}) => node.childImageSharp)
       console.log(allImgs)
       
-      return <StyledGallery images={allImgs}/>;
+      return <Gallery colWidth="50" mdColWidth="50" gutter="1vw" images={allImgs}/>;
     }}
   />
 );
