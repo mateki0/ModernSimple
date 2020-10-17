@@ -17,11 +17,17 @@ interface IFormInput{
   phone:number;
   message:string;
 }
+function encode(data) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
 const ContactForm: React.FC<{ displayMobile: boolean; }> = ({ displayMobile }) => {
-  
+  const [state, setState] = React.useState({})
+  const handleChange = (e: { target: { name: any; value: any; }; }) => setState({ ...state, [e.target.name]: e.target.value })
   const resolver = useYupValidationResolver(validationSchema)
   const {register, handleSubmit} = useForm<IFormInput>({
-    mode: 'onSubmit',
+    mode: 'onChange',
     resolver:resolver
   });
   const onSubmit = (data, e) =>{
@@ -29,11 +35,14 @@ const ContactForm: React.FC<{ displayMobile: boolean; }> = ({ displayMobile }) =
     fetch('/', {
       method:'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body:data
+      body: encode({
+        'form-name':'contact',
+        ...state
+      })
     })
     .then(data=>{
       console.log(data);
-      window.location.href = "/dziekujemy"
+      
     })
     .catch(error=>console.log(error));
     
@@ -48,10 +57,10 @@ const ContactForm: React.FC<{ displayMobile: boolean; }> = ({ displayMobile }) =
       <SectionWrapper>
         
           <FormWrapper method="POST" name="contact" onSubmit={handleSubmit(onSubmit)} data-netlify-honeypot="bot-field" data-netlify="true" action="/dziekujemy">
-            <ContactInput label="Imię i nazwisko" name="name" forwardRef={register}/>
-            <ContactInput label="Adres e-mail" name="email" forwardRef={register}/>
-            <ContactInput label="Telefon kontaktowy" name="phone" forwardRef={register}/>
-            <ContactInput label="Treść wiadomości" name="message" textarea={true} forwardRef={register} />
+            <ContactInput onChange={handleChange} label="Imię i nazwisko" name="name" forwardRef={register}/>
+            <ContactInput onChange={handleChange} label="Adres e-mail" name="email" forwardRef={register}/>
+            <ContactInput onChange={handleChange} label="Telefon kontaktowy" name="phone" forwardRef={register}/>
+            <ContactInput onChange={handleChange} label="Treść wiadomości" name="message" textarea={true} forwardRef={register} />
             <ButtonDiv>
               <ContactButton />
             </ButtonDiv>
