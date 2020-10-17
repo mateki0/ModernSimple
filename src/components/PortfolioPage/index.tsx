@@ -16,7 +16,6 @@ const PortfolioPage: React.FC = () => {
       allMarkdownRemark {
         edges {
           node {
-            id
             frontmatter {
               imgDescription
               imgName
@@ -30,7 +29,7 @@ const PortfolioPage: React.FC = () => {
   const allImages = allFile.allMarkdownRemark.edges.filter(
     (item) => item.node.frontmatter.image !== null
   );
-    
+
   return (
     <PortfolioWrapper>
       <FiltersWrapper>
@@ -39,10 +38,7 @@ const PortfolioPage: React.FC = () => {
         <FilterButtonSpan to="./obrazki">Obrazki dla dzieci</FilterButtonSpan>
         <FilterButtonSpan to="./zaproszenia">Zaproszenia</FilterButtonSpan>
       </FiltersWrapper>
-        <GatsbyGallery />
-         
-       
-      
+        <GatsbyGallery images={allImages} />
     </PortfolioWrapper>
   );
 };

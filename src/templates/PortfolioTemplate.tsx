@@ -3,12 +3,8 @@ import Layout from '../components/Layout';
 
 import PortfolioWrapper from '../components/PortfolioPage/styled/PortfolioWrapper';
 import FiltersWrapper from '../components/PortfolioPage/styled/FiltersWrapper';
-import ImagesWrapper from '../components/PortfolioPage/styled/ImagesWrapper';
-import SingleImage from '../components/PortfolioPage/styled/SingleImage';
-import ImageMask from '../components/PortfolioPage/styled/ImageMask';
-import DescriptionSpan from '../components/PortfolioPage/styled/DescriptionSpan';
 import FilterButtonSpan from '../components/PortfolioPage/styled/FilterButtonSpan';
-import GatsbyImage from '../components/GatsbyImage';
+import GatsbyGallery from '../components/GatsbyGallery';
 
 interface PortfolioProps {
   pageContext: {
@@ -27,6 +23,7 @@ interface PortfolioProps {
 }
 
 const PortfolioTemplate: React.FC<PortfolioProps> = (data) => {
+  console.log(data.pageContext.images.map(({imgName, imgDescription, image }) => ({ imgName, imgDescription, image })))
   return (
     <Layout>
       <PortfolioWrapper>
@@ -44,19 +41,7 @@ const PortfolioTemplate: React.FC<PortfolioProps> = (data) => {
             Zaproszenia
           </FilterButtonSpan>
         </FiltersWrapper>
-
-        <ImagesWrapper>
-          {data.pageContext.images.map((image, index) => (
-            <React.Fragment key={index}>
-              <SingleImage>
-                <GatsbyImage filename={image.image} />
-                <ImageMask>
-                  <DescriptionSpan>{image.imgDescription}</DescriptionSpan>
-                </ImageMask>
-              </SingleImage>
-            </React.Fragment>
-          ))}
-        </ImagesWrapper>
+        <GatsbyGallery images={data.pageContext.images.map(({imgName, imgDescription, image }) => ({ node: { frontmatter: { imgName, imgDescription, image }}}))} />
       </PortfolioWrapper>
     </Layout>
   );
