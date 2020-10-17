@@ -8,6 +8,7 @@ import DescriptionSpan from './styled/DescriptionSpan';
 import ImageMask from './styled/ImageMask';
 import FilterButtonSpan from './styled/FilterButtonSpan';
 import GatsbyImage from '../GatsbyImage';
+import GatsbyGallery from '../GatsbyGallery';
 
 const PortfolioPage: React.FC = () => {
   const allFile = useStaticQuery(graphql`
@@ -38,33 +39,11 @@ const PortfolioPage: React.FC = () => {
         <FilterButtonSpan to="./obrazki">Obrazki dla dzieci</FilterButtonSpan>
         <FilterButtonSpan to="./zaproszenia">Zaproszenia</FilterButtonSpan>
       </FiltersWrapper>
-
-      <ImagesWrapper>
-        {allImages.map((image, index) => (
-          <React.Fragment key={index}>
-            <SingleImage>
-              <GatsbyImage filename={image.node.frontmatter.image} />
-              <ImageMask>
-                <DescriptionSpan>{image.node.frontmatter.imgDescription}</DescriptionSpan>
-              </ImageMask>
-            </SingleImage>
-
-            {/* <StyledModal isOpen={isOpen} onRequestClose={handleModalClose}>
-              {modalImg && modalImg !== undefined ? (
-                <ModalImgWrapper>
-                  <StyledGatsbyImgWrapper>
-                    <Img fluid={modalImg} />
-                  </StyledGatsbyImgWrapper>
-                  <ModalName>Nazwa</ModalName>
-                  <ModalDescription>Opis</ModalDescription>
-                </ModalImgWrapper>
-              ) : (
-                ''
-              )}
-            </StyledModal> */}
-          </React.Fragment>
-        ))}
-      </ImagesWrapper>
+          
+              <GatsbyGallery  />
+         
+       
+      
     </PortfolioWrapper>
   );
 };
