@@ -8,6 +8,7 @@ const InputWrapper = styled.div`
   margin-bottom: 10px;
   @media only screen and (min-width: 1024px) {
     width:94%;
+    margin-bottom: 20px;
   }
 `;
 
