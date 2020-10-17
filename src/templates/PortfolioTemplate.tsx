@@ -23,7 +23,6 @@ interface PortfolioProps {
 }
 
 const PortfolioTemplate: React.FC<PortfolioProps> = (data) => {
-  console.log(data.pageContext.images.map(({imgName, imgDescription, image }) => ({ imgName, imgDescription, image })))
   return (
     <Layout>
       <PortfolioWrapper>
@@ -41,7 +40,11 @@ const PortfolioTemplate: React.FC<PortfolioProps> = (data) => {
             Zaproszenia
           </FilterButtonSpan>
         </FiltersWrapper>
-        <GatsbyGallery images={data.pageContext.images.map(({imgName, imgDescription, image }) => ({ node: { frontmatter: { imgName, imgDescription, image }}}))} />
+        <GatsbyGallery
+          images={data.pageContext.images.map(({ imgName, imgDescription, image }) => ({
+            node: { frontmatter: { imgName, imgDescription, image } },
+          }))}
+        />
       </PortfolioWrapper>
     </Layout>
   );

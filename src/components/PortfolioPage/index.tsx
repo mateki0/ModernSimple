@@ -1,13 +1,8 @@
 import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import FiltersWrapper from './styled/FiltersWrapper';
-import ImagesWrapper from './styled/ImagesWrapper';
 import PortfolioWrapper from './styled/PortfolioWrapper';
-import SingleImage from './styled/SingleImage';
-import DescriptionSpan from './styled/DescriptionSpan';
-import ImageMask from './styled/ImageMask';
 import FilterButtonSpan from './styled/FilterButtonSpan';
-import GatsbyImage from '../GatsbyImage';
 import GatsbyGallery from '../GatsbyGallery';
 
 const PortfolioPage: React.FC = () => {
@@ -38,7 +33,7 @@ const PortfolioPage: React.FC = () => {
         <FilterButtonSpan to="./obrazki">Obrazki dla dzieci</FilterButtonSpan>
         <FilterButtonSpan to="./zaproszenia">Zaproszenia</FilterButtonSpan>
       </FiltersWrapper>
-        <GatsbyGallery images={allImages} />
+      <GatsbyGallery images={allImages} />
     </PortfolioWrapper>
   );
 };

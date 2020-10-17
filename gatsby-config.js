@@ -3,9 +3,9 @@ const {
   URL: NETLIFY_SITE_URL = 'https://www.modernsimple.pl',
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV,
-} = process.env
-  const isNetlifyProduction = NETLIFY_ENV === 'production'
-  const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL
+} = process.env;
+const isNetlifyProduction = NETLIFY_ENV === 'production';
+const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
 module.exports = {
   siteMetadata: {
     title: `Modern Simple`,
@@ -13,14 +13,13 @@ module.exports = {
     author: `Mateusz Bętka`,
     siteUrl: siteUrl,
   },
-  
 
   plugins: [
     {
       resolve: `gatsby-plugin-netlify-identity`,
       options: {
-        url: `https://modernsimple.pl/.netlify/identity` // required!
-      }
+        url: `https://modernsimple.pl/.netlify/identity`, // required!
+      },
     },
     {
       resolve: `gatsby-plugin-netlify-cms`,
@@ -28,29 +27,28 @@ module.exports = {
         enableIdentityWidget: true,
       },
     },
-    
-      
-        {
-          resolve: 'gatsby-plugin-robots-txt',
-          options: {
-            resolveEnv: () => NETLIFY_ENV,
-            env: {
-              production: {
-                policy: [{ userAgent: '*' }],
-              },
-              'branch-deploy': {
-                policy: [{ userAgent: '*', disallow: ['/'] }],
-                sitemap: null,
-                host: null,
-              },
-              'deploy-preview': {
-                policy: [{ userAgent: '*', disallow: ['/'] }],
-                sitemap: null,
-                host: null,
-              },
-            },
+
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        resolveEnv: () => NETLIFY_ENV,
+        env: {
+          production: {
+            policy: [{ userAgent: '*' }],
+          },
+          'branch-deploy': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null,
+          },
+          'deploy-preview': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null,
           },
         },
+      },
+    },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-react-helmet`,
