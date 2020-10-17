@@ -18,17 +18,23 @@ interface IFormInput{
   message:string;
 }
 const ContactForm: React.FC<{ displayMobile: boolean; }> = ({ displayMobile }) => {
+  
   const resolver = useYupValidationResolver(validationSchema)
   const {register, handleSubmit} = useForm<IFormInput>({
     mode: 'onSubmit',
     resolver:resolver
   });
   const onSubmit = (data, e) =>{
+    e.preventDefault();
     fetch('/', {
       method:'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body:data
     })
-    .then(data=>console.log(data))
+    .then(data=>{
+      console.log(data);
+      window.location.href = "/dziekujemy"
+    })
     .catch(error=>console.log(error));
     
   } 
@@ -41,7 +47,7 @@ const ContactForm: React.FC<{ displayMobile: boolean; }> = ({ displayMobile }) =
 
       <SectionWrapper>
         
-          <FormWrapper method="POST" name="contact" onSubmit={handleSubmit(onSubmit)}  data-netlify="true" action="/dziekujemy">
+          <FormWrapper method="POST" name="contact" onSubmit={handleSubmit(onSubmit)} data-netlify-honeypot="bot-field" data-netlify="true" action="/dziekujemy">
             <ContactInput label="Imię i nazwisko" name="name" forwardRef={register}/>
             <ContactInput label="Adres e-mail" name="email" forwardRef={register}/>
             <ContactInput label="Telefon kontaktowy" name="phone" forwardRef={register}/>
