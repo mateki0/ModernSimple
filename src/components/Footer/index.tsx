@@ -6,12 +6,13 @@ import FooterSectionTitle from './styled/FooterSectionTitle';
 import FooterWrapper from './styled/FooterWrapper';
 import FooterSectionContent from './styled/FooterSectionContent';
 import SectionContentWrapper from './styled/SectionContentWrapper';
+import SingleFooterSection from './styled/SingleFooterSection';
 
 const Footer: React.FC = () => {
   return (
     <footer>
       <FooterWrapper>
-        <div>
+        <SingleFooterSection>
           <FooterSectionTitle>Napisz lub zadzwoń</FooterSectionTitle>
           <SectionContentWrapper>
             <FooterSectionContent>
@@ -25,7 +26,7 @@ const Footer: React.FC = () => {
               <ContentSpan>modernsimple00@gmail.com</ContentSpan>
             </FooterSectionContent>
           </SectionContentWrapper>
-        </div>
+        </SingleFooterSection>
         <div>
           <FooterSectionTitle>Godziny otwarcia</FooterSectionTitle>
           <FooterSectionContent>

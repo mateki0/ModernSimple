@@ -5,7 +5,7 @@ import PortfolioWrapper from '../components/PortfolioPage/styled/PortfolioWrappe
 import FiltersWrapper from '../components/PortfolioPage/styled/FiltersWrapper';
 import FilterLink from '../components/PortfolioPage/styled/FilterLink';
 import GatsbyGallery from '../components/GatsbyGallery';
-import AllLinkWrapper from '../components/PortfolioPage/styled/AllButtonWrapper';
+import AllLinkWrapper from '../components/PortfolioPage/styled/AllLinkWrapper';
 
 interface PortfolioProps {
   pageContext: {
@@ -27,9 +27,9 @@ const PortfolioTemplate: React.FC<PortfolioProps> = (data) => {
   return (
     <Layout>
       <PortfolioWrapper>
-        <AllLinkWrapper>
-          <FilterLink to="../">Wszystko</FilterLink>
-        </AllLinkWrapper>
+        {/* <AllLinkWrapper>
+          <FilterLink to="../">Wszystkie prace</FilterLink>
+        </AllLinkWrapper> */}
         <FiltersWrapper>
           <FilterLink activeStyle={{ backgroundColor: '#27867f' }} to="../identyfikacje">
             Identyfikacja wizualna
