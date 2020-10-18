@@ -1,6 +1,6 @@
 ---
 imgName: Plakat do wystawy "Zimne Noce"
 imgDescription: Projekt plakatu wystawy
-category: Identyfikacje Wizualne
+category: identyfikacje
 image: /assets/plakat-zimne-noce-.jpg
 ---
