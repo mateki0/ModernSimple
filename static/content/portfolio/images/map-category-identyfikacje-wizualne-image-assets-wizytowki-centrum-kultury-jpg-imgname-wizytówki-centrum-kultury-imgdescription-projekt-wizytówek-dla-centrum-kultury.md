@@ -1,6 +1,6 @@
 ---
 imgName: Wizytówki Centrum Kultury
 imgDescription: PRojekt wizytówek dla Centrum Kultury
-category: Identyfikacje Wizualne
+category: identyfikacje
 image: /assets/wizytowki-centrum-kultury.jpg
 ---
