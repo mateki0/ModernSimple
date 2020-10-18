@@ -2,5 +2,5 @@
 imgName: Obrazek Sówki
 imgDescription: Projekt obrazka
 category: obrazki
-image: /assets/sowka.png
+image: /assets/sowka.jpg
 ---
