@@ -1,6 +1,6 @@
 ---
 imgName: Wizytówki dla Szkoły podstawowej
 imgDescription: Projekt wizytówek dla Szkoly podstawowej
-category: Identyfikacje Wizualne
+category: identyfikacje
 image: /assets/wizytowki-szkola-podstawowa.png
 ---
