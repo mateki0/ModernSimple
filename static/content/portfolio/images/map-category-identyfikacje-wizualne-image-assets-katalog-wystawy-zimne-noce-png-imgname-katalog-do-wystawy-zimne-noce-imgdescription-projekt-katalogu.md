@@ -1,6 +1,6 @@
 ---
 imgName: Katalog do wystawy "Zimne noce"
 imgDescription: Projekt katalogu
-category: Identyfikacje Wizualne
+category: identyfikacje
 image: /assets/katalog-wystawy-zimne-noce-.png
 ---
