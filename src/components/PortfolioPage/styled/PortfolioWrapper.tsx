@@ -6,8 +6,11 @@ const PortfolioWrapper = styled.div`
     padding-top: 50px;
   }
   .galleryImg {
+    transition: all 0.5s;
     &:hover {
       cursor: pointer;
+      opacity:0.7;
+      
     }
   }
 `;
