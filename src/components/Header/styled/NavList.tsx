@@ -8,7 +8,6 @@ const NavList = styled.ul`
   align-items: center;
   flex-direction:column;
   width: 100%;
-  
   @media only screen and (min-width: 1024px) {
     padding: 0 22px;
     flex-direction:row;

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
 import Heading from '../Cooperation/styled/Heading';
 import LastProjectsWrapper from './styled/LastProjectsWrapper';
 import SliderWrapper from './styled/SliderWrapper';
@@ -11,7 +10,6 @@ import GatsbyImage from '../GatsbyImage';
 
 const LastProjects: React.FC = () => {
   const [index, setIndex] = React.useState(0);
-  
   const allFile = useStaticQuery(graphql`
     query {
       allMarkdownRemark {
@@ -49,7 +47,7 @@ const LastProjects: React.FC = () => {
     <LastProjectsWrapper>
       <Heading>Ostatnie Projekty</Heading>
       <SliderWrapper>
-        <GatsbyImage filename={identifications[index].node.frontmatter.image}   />
+        <GatsbyImage filename={identifications[index].node.frontmatter.image} />
       </SliderWrapper>
       <ButtonsWrapper>
         <SliderButton onClick={() => handlePrevious()} rotate="true">

@@ -4,15 +4,21 @@ import OfferWrapper from './styled/OfferWrapper';
 import SingleOffer from './styled/SingleOffer';
 import SingleOfferSpan from './styled/SingleOfferSpan';
 import OfferBgImg from './styled/OfferBgImg';
-import GatsbyImage from '../GatsbyImage';
 
 const OfferBox: React.FC = () => {
-  const  desktop  = useStaticQuery(
+  const desktop = useStaticQuery(
     graphql`
       query {
+        mobile: file(relativePath: { eq: "telBg.png" }) {
+          childImageSharp {
+            fluid(quality: 100, maxWidth: 1024) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         desktop: file(relativePath: { eq: "kompBg.png" }) {
           childImageSharp {
-            fluid(quality: 90, maxWidth: 4160) {
+            fluid(quality: 100, maxWidth: 4160) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -20,9 +26,16 @@ const OfferBox: React.FC = () => {
       }
     `
   );
+  const backgroundImages = [
+    desktop.mobile.childImageSharp.fluid,
+    {
+      ...desktop.desktop.childImageSharp.fluid,
+      media: '( min-width:1024px )',
+    },
+  ];
   return (
     <OfferWrapper>
-      <OfferBgImg fluid={desktop.desktop.childImageSharp.fluid}>
+      <OfferBgImg fluid={backgroundImages}>
         <SingleOffer href="/uslugi" position="end" row="1/1" bgHover="#27867f" bgColor="#eca72c">
           <SingleOfferSpan> Identyfikacja wizualna</SingleOfferSpan>
         </SingleOffer>

@@ -3,8 +3,9 @@ import Layout from '../components/Layout';
 
 import PortfolioWrapper from '../components/PortfolioPage/styled/PortfolioWrapper';
 import FiltersWrapper from '../components/PortfolioPage/styled/FiltersWrapper';
-import FilterButtonSpan from '../components/PortfolioPage/styled/FilterButtonSpan';
+import FilterLink from '../components/PortfolioPage/styled/FilterLink';
 import GatsbyGallery from '../components/GatsbyGallery';
+import AllLinkWrapper from '../components/PortfolioPage/styled/AllButtonWrapper';
 
 interface PortfolioProps {
   pageContext: {
@@ -26,19 +27,22 @@ const PortfolioTemplate: React.FC<PortfolioProps> = (data) => {
   return (
     <Layout>
       <PortfolioWrapper>
+        <AllLinkWrapper>
+          <FilterLink to="../">Wszystko</FilterLink>
+        </AllLinkWrapper>
         <FiltersWrapper>
-          <FilterButtonSpan activeStyle={{ backgroundColor: '#27867f' }} to="../identyfikacje">
+          <FilterLink activeStyle={{ backgroundColor: '#27867f' }} to="../identyfikacje">
             Identyfikacja wizualna
-          </FilterButtonSpan>
-          <FilterButtonSpan activeStyle={{ backgroundColor: '#27867f' }} to="../metryczki">
+          </FilterLink>
+          <FilterLink activeStyle={{ backgroundColor: '#27867f' }} to="../metryczki">
             Metryczki
-          </FilterButtonSpan>
-          <FilterButtonSpan activeStyle={{ backgroundColor: '#27867f' }} to="../obrazki">
+          </FilterLink>
+          <FilterLink activeStyle={{ backgroundColor: '#27867f' }} to="../obrazki">
             Obrazki dla dzieci
-          </FilterButtonSpan>
-          <FilterButtonSpan activeStyle={{ backgroundColor: '#27867f' }} to="../zaproszenia">
+          </FilterLink>
+          <FilterLink activeStyle={{ backgroundColor: '#27867f' }} to="../zaproszenia">
             Zaproszenia
-          </FilterButtonSpan>
+          </FilterLink>
         </FiltersWrapper>
         <GatsbyGallery
           images={data.pageContext.images.map(({ imgName, imgDescription, image }) => ({

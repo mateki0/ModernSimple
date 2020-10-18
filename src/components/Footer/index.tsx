@@ -1,13 +1,13 @@
 import * as React from 'react';
+
 import ContentSpan from './styled/ContentSpan';
 import ContentTitle from './styled/ContentTitle';
-
 import FooterSectionTitle from './styled/FooterSectionTitle';
 import FooterWrapper from './styled/FooterWrapper';
 import FooterSectionContent from './styled/FooterSectionContent';
 import SectionContentWrapper from './styled/SectionContentWrapper';
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer>
       <FooterWrapper>
@@ -37,7 +37,11 @@ const Footer = () => {
           <FooterSectionTitle>Social Media</FooterSectionTitle>
           <FooterSectionContent>
             <ContentTitle>Facebook</ContentTitle>
-            <ContentSpan as="a" href="https://www.facebook.com/Modern-Simple-101772301672898">
+            <ContentSpan
+              as="a"
+              href="https://www.facebook.com/Modern-Simple-101772301672898"
+              target="_blank"
+            >
               Modern Simple
             </ContentSpan>
           </FooterSectionContent>
@@ -45,7 +49,7 @@ const Footer = () => {
         <div>
           <FooterSectionTitle>Polityka prywatności</FooterSectionTitle>
           <FooterSectionContent>
-            <ContentTitle as="a" href="/polityka-prywatnosci" target="_blank">
+            <ContentTitle as="a" href="/polityka-prywatnosci">
               Informacje ogólne
             </ContentTitle>
           </FooterSectionContent>

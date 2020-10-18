@@ -5,6 +5,11 @@ const PortfolioWrapper = styled.div`
   @media only screen and (min-width: 1024px) {
     padding-top: 50px;
   }
+  .galleryImg {
+    &:hover {
+      cursor: pointer;
+    }
+  }
 `;
 
 export default PortfolioWrapper;

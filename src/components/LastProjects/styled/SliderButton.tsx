@@ -4,7 +4,6 @@ const SliderButton = styled.button<{ rotate?: string }>`
   background: transparent;
   border: none;
   transform: ${(props) => (props.rotate === 'true' ? 'rotate(180deg)' : 'none')};
-
   > * {
     width: 17px;
     height: 15px;

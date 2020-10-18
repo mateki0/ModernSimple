@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Heading from '../Cooperation/styled/Heading';
 import RedirectHeading from './styled/RedirectHeading';
 import RedirectSpan from './styled/RedirectSpan';
 import RedirectWrapper from './styled/RedirectWrapper';

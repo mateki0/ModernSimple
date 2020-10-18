@@ -7,7 +7,7 @@ const Contact: React.FC = () => {
   return (
     <Layout>
       <SEO title="Kontakt" />
-      <ContactPage displayMobile={true} />
+      <ContactPage />
       <ContactForm displayMobile={true} />
     </Layout>
   );

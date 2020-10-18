@@ -56,7 +56,15 @@ const GatsbyGallery: React.FC<GalleryProps> = ({ images }) => (
           };
         });
 
-      return <Gallery colWidth={50} mdColWidth={50} gutter="1vw" images={galleryImages} />;
+      return (
+        <Gallery
+          imgClass="galleryImg"
+          colWidth={50}
+          mdColWidth={50}
+          gutter="1vw"
+          images={galleryImages}
+        />
+      );
     }}
   />
 );

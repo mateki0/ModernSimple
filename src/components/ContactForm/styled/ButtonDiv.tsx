@@ -6,7 +6,7 @@ const ButtonDiv = styled.div`
   justify-content: flex-end;
   width: 99%;
   @media only screen and (min-width: 1024px) {
-    width:95%;
+    width: 95%;
   }
 `;
 export default ButtonDiv;

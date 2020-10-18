@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const ContentTitle = styled.h5`
+const ContentTitle = styled.h2`
   font-size: 6px;
   font-weight: 900;
   color: #eca72c;

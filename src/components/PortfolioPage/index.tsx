@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import FiltersWrapper from './styled/FiltersWrapper';
 import PortfolioWrapper from './styled/PortfolioWrapper';
-import FilterButtonSpan from './styled/FilterButtonSpan';
+import FilterLink from './styled/FilterLink';
 import GatsbyGallery from '../GatsbyGallery';
 
 const PortfolioPage: React.FC = () => {
@@ -28,10 +28,10 @@ const PortfolioPage: React.FC = () => {
   return (
     <PortfolioWrapper>
       <FiltersWrapper>
-        <FilterButtonSpan to="./identyfikacje">Identyfikacja wizualna</FilterButtonSpan>
-        <FilterButtonSpan to="./metryczki">Metryczki</FilterButtonSpan>
-        <FilterButtonSpan to="./obrazki">Obrazki dla dzieci</FilterButtonSpan>
-        <FilterButtonSpan to="./zaproszenia">Zaproszenia</FilterButtonSpan>
+        <FilterLink to="./identyfikacje">Identyfikacja wizualna</FilterLink>
+        <FilterLink to="./metryczki">Metryczki</FilterLink>
+        <FilterLink to="./obrazki">Obrazki dla dzieci</FilterLink>
+        <FilterLink to="./zaproszenia">Zaproszenia</FilterLink>
       </FiltersWrapper>
       <GatsbyGallery images={allImages} />
     </PortfolioWrapper>

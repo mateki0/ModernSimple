@@ -9,15 +9,21 @@ interface InputProps {
   label: string;
   name: string;
   textarea?: boolean;
-  forwardRef:any;
-  onChange: (e: { target: { name: any; value: any; }; })=>void;
-  
+  forwardRef: any;
+  onChange: (e: { target: { name: string; value: string } }) => void;
 }
-const ContactInput: React.FC<InputProps> = ({ width, height, label, name, textarea, forwardRef, onChange }) => {
+const ContactInput: React.FC<InputProps> = ({ label, name, textarea, forwardRef, onChange }) => {
   return (
     <InputWrapper>
       <InputLabel htmlFor={name}>{label}</InputLabel>
-      <Input as={textarea ? 'textarea' : 'input'} name={name} id={name} textarea={textarea} ref={forwardRef} onChange={onChange} ></Input>
+      <Input
+        as={textarea ? 'textarea' : 'input'}
+        name={name}
+        id={name}
+        textarea={textarea}
+        ref={forwardRef}
+        onChange={onChange}
+      ></Input>
     </InputWrapper>
   );
 };

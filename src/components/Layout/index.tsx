@@ -19,15 +19,11 @@ body{
   padding:0 9px;
   font-family: 'Nunito', sans-serif;
   @media only screen and (min-width: 1024px) {
-    
     padding:0 22px;
-    
   }
-  
 }
 `;
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {

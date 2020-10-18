@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-const FilterButtonSpan = styled(Link)`
+const FilterLink = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,7 +14,7 @@ const FilterButtonSpan = styled(Link)`
     background: #2c9692;
     cursor: pointer;
   }
-
+  text-decoration: none;
   color: #fff;
   font-size: 12px;
   font-weight: bold;
@@ -23,4 +23,4 @@ const FilterButtonSpan = styled(Link)`
     font-size: 26px;
   }
 `;
-export default FilterButtonSpan;
+export default FilterLink;

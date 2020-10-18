@@ -14,7 +14,6 @@ const Navigation = styled.nav`
   border-bottom: 2px solid #eca72c;
   @media only screen and (min-width: 1024px) {
     height: 134px;
-
     margin-bottom: 100px;
   }
 `;

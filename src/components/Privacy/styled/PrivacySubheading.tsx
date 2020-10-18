@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const PrivacySubheading = styled.h4`
+const PrivacySubheading = styled.h3`
   font-size: 8px;
   font-weight: bold;
   color: #eca72c;

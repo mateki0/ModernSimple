@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Input = styled.input<{ height?: string; textarea?: boolean }>`
+const Input = styled.input<{ textarea?: boolean }>`
   height: ${(props) => (props.textarea ? '92px' : '25px')};
   border: 2px solid #2c9692;
   border-radius: 7px;
