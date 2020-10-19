@@ -6,8 +6,9 @@ const PortfolioWrapper = styled.div`
     padding-top: 50px;
   }
   .galleryImg {
-    transition: all 0.5s;
+    transition:all 0.5s;
     &:hover {
+      filter: brightness(60%);
       cursor: pointer;
       opacity:0.7;
       
