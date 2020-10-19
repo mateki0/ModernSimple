@@ -20,7 +20,7 @@ const FilterLink = styled(Link)`
   font-weight: bold;
   font-family: 'Nunito', sans-serif;
   @media only screen and (min-width: 1024px) {
-    font-size: 26px;
+    font-size: 22px;
   }
 `;
 export default FilterLink;
