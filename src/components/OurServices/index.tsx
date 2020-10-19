@@ -15,7 +15,7 @@ const OurServices: React.FC = () => {
     <ServicesWrapper>
       <Heading>Nasze Usługi</Heading>
       <ColumnsWrapper>
-        <ColumnItem>
+        <ColumnItem gridRow="span 3" gridArea="logo">
           <ColumnTitle>Logo</ColumnTitle>
           <LogoType>
             Logo Standard <br />
@@ -48,8 +48,23 @@ const OurServices: React.FC = () => {
             chcesz mieć duży wybór!
           </ColumnText>
         </ColumnItem>
-
-        <ColumnItem>
+        <ColumnItem  gridArea="identyfikacja">
+          <ColumnTitle>Identyfikacja Wizualna</ColumnTitle>
+          <ColumnText>
+            Podstawowe narzędzie do kreowania wizerunku marki. Jeżeli interesuje cię wyróżnienie się
+            na rynku i stworzenie spójnej identyfikacji, to ta opcja jest właśnie dla Ciebie.
+            Zadbamy o twój znak o materiały reklamowe i wizerunek marki. Wycena tworzona jest
+            indywidualnie i zależy od Twoich potrzeb.
+          </ColumnText>
+          </ColumnItem>
+      <ColumnItem  gridArea="strony">
+          <ColumnTitle >Strony internetowe</ColumnTitle>
+          <ColumnText>
+            Potrzebujesz strony internetowej? To ta opcja jest właśnie dla Ciebie. Zaprojektujemy
+            Twoją stronę internetową. Po akceptacji prototypu przystąpimy do jej realizacji.
+          </ColumnText>
+        </ColumnItem>
+        <ColumnItem gridArea="materialy">
           <ColumnTitle>Materiały reklamowe</ColumnTitle>
           <AdvertiseMaterialsUl>
             <AdvertiseMaterialItem>Wizytówka jednostronna</AdvertiseMaterialItem>
@@ -64,29 +79,15 @@ const OurServices: React.FC = () => {
             <AdvertiseMaterialItem>Koperty</AdvertiseMaterialItem>
           </AdvertiseMaterialsUl>
         </ColumnItem>
-        <ColumnItem>
-          <ColumnTitle>Identyfikacja Wizualna</ColumnTitle>
-          <ColumnText>
-            Podstawowe narzędzie do kreowania wizerunku marki. Jeżeli interesuje cię wyróżnienie się
-            na rynku i stworzenie spójnej identyfikacji, to ta opcja jest właśnie dla Ciebie.
-            Zadbamy o twój znak o materiały reklamowe i wizerunek marki. Wycena tworzona jest
-            indywidualnie i zależy od Twoich potrzeb.
-          </ColumnText>
-
-          <ColumnTitle>Strony internetowe</ColumnTitle>
-          <ColumnText>
-            Potrzebujesz strony internetowej? To ta opcja jest właśnie dla Ciebie. Zaprojektujemy
-            Twoją stronę internetową. Po akceptacji prototypu przystąpimy do jej realizacji.
-          </ColumnText>
-        </ColumnItem>
-        <ColumnItem>
+        <ColumnItem  gridArea="zaproszenia" >
           <ColumnTitle>Zaproszenia</ColumnTitle>
           <ColumnText>
             Jeżeli potrzebujesz zaproszeń na ważne wydarzenie, ślub, urodziny, chrzciny, itp. To ta
             opcja jest właśnie dla Ciebie. Wycena jest robiona indywidualnie. Zależy od tego czego
             potrzebujesz i w jakich ilościach.
           </ColumnText>
-
+          </ColumnItem>
+      <ColumnItem gridArea="metryczki">
           <ColumnTitle>Metryczki</ColumnTitle>
           <ColumnText>
             <LogoType>Metryczki</LogoType>
