@@ -13,11 +13,21 @@ const StyledCarousel = styled(Carousel)`
       
   }
   .slider-control-bottomcenter ul{
+    
+    opacity:0;
+    visibility:hidden;
+  }
+}
+@media only screen and (min-width: 1024px) {
+&.slider{
+  .slider-control-bottomcenter ul{
+    opacity:1;
+    visibility:visible;
     width:100%;
     justify-content:center;
     flex-wrap:wrap;
-    
   }
+}
 }
 &:hover {
   .slider-control-centerleft,
