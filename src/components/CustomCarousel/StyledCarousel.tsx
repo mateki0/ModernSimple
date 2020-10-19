@@ -10,10 +10,8 @@ const StyledCarousel = styled(Carousel)`
   }
   .slider-control-bottomcenter{
       width:100%;
-      
   }
   .slider-control-bottomcenter ul{
-    
     opacity:0;
     visibility:hidden;
   }
