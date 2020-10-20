@@ -45,6 +45,10 @@ function SEO({ description, lang, meta, title }) {
           content: title,
         },
         {
+          property: `og:image`,
+          content: '../assets/kompBg.png'
+        },
+        {
           property: `og:description`,
           content: metaDescription,
         },
