@@ -31,19 +31,20 @@ module.exports = {
             policy: [{ userAgent: '*' }],
           },
           'branch-deploy': {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
-            sitemap: null,
-            host: null,
+            policy: [{ userAgent: '*', disallow: ['/'] }]
           },
           'deploy-preview': {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
-            sitemap: null,
-            host: null,
+            policy: [{ userAgent: '*', disallow: ['/'] }]
           },
         },
       },
     },
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/sitemap.xml`,
+      }
+    },
     `gatsby-plugin-netlify`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
