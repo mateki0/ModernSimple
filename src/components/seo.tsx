@@ -48,7 +48,7 @@ function SEO({ description, meta, title}) {
         },
         {
           property: `og:image`,
-          content: 'https://modernsimple.pl/src/assets/kompBg.png'
+          content: 'https://modernsimple.pl/static/kompBg.png'
         },
         {
           property: `og:description`,
