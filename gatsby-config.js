@@ -9,7 +9,7 @@ const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
 module.exports = {
   siteMetadata: {
     title: `Modern Simple`,
-    description: `Profesjonalne studio graficzne ModernSimple. Lokalizacja:Chrzanów, Małopolska`,
+    description: `Modern Simple studio graficzne Klaudia Ryś`,
     author: `Mateusz Bętka`,
     siteUrl: siteUrl,
   },

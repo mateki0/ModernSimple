@@ -43,7 +43,7 @@ function SEO({ description, meta, title}) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: defaultTitle + '|' + title,
         },
         {
           property: `og:image`,
@@ -67,7 +67,7 @@ function SEO({ description, meta, title}) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: defaultTitle + '|' + title,
         },
         {
           name: `twitter:description`,
