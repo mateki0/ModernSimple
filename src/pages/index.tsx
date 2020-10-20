@@ -8,7 +8,7 @@ import LastProjects from '../components/LastProjects';
 
 const IndexPage: React.FC = () => (
   <Layout>
-    <SEO title="Strona główna" />
+    <SEO title="Strona główna"  />
     <OfferBox />
     <Cooperation />
     <LastProjects />

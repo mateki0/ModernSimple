@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-function SEO({ description, lang, meta, title}) {
+function SEO({ description, meta, title}) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -28,7 +28,8 @@ function SEO({ description, lang, meta, title}) {
       
   const metaDescription = description || site.siteMetadata.description;
   const defaultTitle = site.siteMetadata?.title;
-      
+  
+  
   return (
     <Helmet
       htmlAttributes={{
@@ -47,7 +48,7 @@ function SEO({ description, lang, meta, title}) {
         },
         {
           property: `og:image`,
-          content: './src/assets/kompBg.png'
+          content: 'https://modernsimple.pl/src/assets/kompBg.png'
         },
         {
           property: `og:description`,
