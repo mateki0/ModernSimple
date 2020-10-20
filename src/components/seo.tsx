@@ -67,7 +67,7 @@ function SEO({ description, meta, title}) {
         },
         {
           name: `twitter:title`,
-          content: defaultTitle + '|' + title,
+          content: defaultTitle + ' | ' + title,
         },
         {
           name: `twitter:description`,
