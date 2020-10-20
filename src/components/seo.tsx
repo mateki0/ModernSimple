@@ -1,13 +1,19 @@
+/**
+ * SEO component that queries for data with
+ *  Gatsby's useStaticQuery React hook
+ *
+ * See: https://www.gatsbyjs.com/docs/use-static-query/
+ */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
-
+import ogImg from '../assets/kompBg.png';
 function SEO({ description, meta, title}) {
-  const  site  = useStaticQuery(
+  const { site } = useStaticQuery(
     graphql`
       query {
-        siteMetadata:
         site {
           siteMetadata {
             siteUrl
@@ -16,25 +22,14 @@ function SEO({ description, meta, title}) {
             author
           }
         }
-        ogImg:
-        allFile(filter: {name: {eq: "kompBg"}}) {
-          edges {
-            node {
-              id
-              childImageSharp {
-                fluid {
-                  src
-                }
-              }
-            }
-          }
-        }
       }
     `
   );
       
-  const metaDescription = description || site.siteMetadata.siteMetadata.description;
-  const defaultTitle = site.siteMetadata.siteMetadata?.title;
+  const metaDescription = description || site.siteMetadata.description;
+  const defaultTitle = site.siteMetadata?.title;
+  
+  
   return (
     <Helmet
       htmlAttributes={{
@@ -53,7 +48,7 @@ function SEO({ description, meta, title}) {
         },
         {
           property: `og:image`,
-          content: site.ogImg.edges[0].node.childImageSharp.fluid.src,
+          content: ogImg,
         },
         {
           property: `og:description`,
@@ -69,7 +64,7 @@ function SEO({ description, meta, title}) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.siteMetadata?.author || ``,
+          content: site.siteMetadata?.author || ``,
         },
         {
           name: `twitter:title`,
