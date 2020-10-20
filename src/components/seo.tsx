@@ -9,7 +9,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
-import ogImg from '../assets/kompBg.png';
 function SEO({ description, meta, title}) {
   const { site } = useStaticQuery(
     graphql`
@@ -48,7 +47,7 @@ function SEO({ description, meta, title}) {
         },
         {
           property: `og:image`,
-          content: ogImg,
+          content: 'https://modernsimple.pl/kompBg.png'
         },
         {
           property: `og:description`,
