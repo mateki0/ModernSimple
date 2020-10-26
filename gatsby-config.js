@@ -21,7 +21,12 @@ module.exports = {
         enableIdentityWidget: true,
       },
     },
-
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-181347131-1",
+        defer: false,
+    },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
