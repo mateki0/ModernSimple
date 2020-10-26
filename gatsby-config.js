@@ -26,6 +26,7 @@ module.exports = {
       options: {
         trackingId: "UA-181347131-1",
         defer: false,
+      }
     },
     {
       resolve: 'gatsby-plugin-robots-txt',
