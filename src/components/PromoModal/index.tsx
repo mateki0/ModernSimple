@@ -12,6 +12,7 @@ const modalStyles = {
   content: {
     position: 'relative',
     top: '200px',
+    left: '0',
     margin: 'auto',
     maxWidth: '640px',
   },
