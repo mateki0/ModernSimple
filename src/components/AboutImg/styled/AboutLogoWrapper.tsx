@@ -9,6 +9,5 @@ const AboutLogoWrapper = styled.div`
     visiblity: none;
     opacity: 0;
   }
-}
 `;
 export default AboutLogoWrapper;

@@ -24,18 +24,16 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: [
-          "UA-181347131-1",
-        ],
+        trackingIds: ['UA-181347131-1'],
         gtagConfig: {
-          optimize_id: "OPT_CONTAINER_ID",
+          optimize_id: 'OPT_CONTAINER_ID',
           anonymize_ip: true,
           cookie_expires: 0,
         },
         pluginConfig: {
           head: false,
-        }
-      }
+        },
+      },
     },
     {
       resolve: 'gatsby-plugin-robots-txt',
@@ -46,10 +44,10 @@ module.exports = {
             policy: [{ userAgent: '*' }],
           },
           'branch-deploy': {
-            policy: [{ userAgent: '*', disallow: ['/'] }]
+            policy: [{ userAgent: '*', disallow: ['/'] }],
           },
           'deploy-preview': {
-            policy: [{ userAgent: '*', disallow: ['/'] }]
+            policy: [{ userAgent: '*', disallow: ['/'] }],
           },
         },
       },
@@ -58,7 +56,7 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/sitemap.xml`,
-      }
+      },
     },
     `gatsby-plugin-netlify`,
     `gatsby-plugin-react-helmet`,
@@ -120,22 +118,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: 'gatsby-plugin-netlify-cache',
       options: {
-        fonts: [
-          {
-            family: `Nunito`,
-            variants: [`400`, `600`, '900'],
-            subsets: [`latin`],
-          },
-        ],
+        cachePublic: true,
       },
-    },
-    {
-      resolve: "gatsby-plugin-netlify-cache",
-      options: {
-        cachePublic: true
-      }
     },
   ],
 };
