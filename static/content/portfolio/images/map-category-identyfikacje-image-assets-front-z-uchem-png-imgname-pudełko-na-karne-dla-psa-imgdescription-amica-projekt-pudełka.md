@@ -1,6 +1,6 @@
 ---
-imgName: Pudełko na karmę dla psa
-imgDescription: Amica projekt pudełka
+imgName: "Identyfikacja GOS "
+imgDescription: Projekt znaku dla GOS ENERGIA LIBIĄŻ
 category: identyfikacje
-image: /assets/front-z-uchem.png
+image: /assets/mockup-wizytowki-ms-kopia.png
 ---
